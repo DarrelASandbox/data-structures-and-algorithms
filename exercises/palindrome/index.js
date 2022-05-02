@@ -7,6 +7,17 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+const palindrome = (str) => {
+  for (let start = 0; start < str.length / 2 - 1; start++) {
+    if (str[start] !== str[str.length - start - 1]) return false;
+  }
+  return true;
+};
+
+const palindrome2 = (str) => str === str.split('').reverse().join('');
+
+// Not the best way as it will run through the entire array
+const palindrome3 = (str) =>
+  str.split('').every((char, idx) => char === str[str.length - idx - 1]);
 
 module.exports = palindrome;

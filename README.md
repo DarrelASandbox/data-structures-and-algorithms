@@ -10,7 +10,7 @@
 
 ## Notes
 
-- Command to run a single test file: <code>npm test fib/test.js</code>
+- Command to run a single test file: <code>npm test exercises/fib/test.js</code>
 
 ### Coding Interview
 
