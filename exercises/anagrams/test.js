@@ -25,3 +25,15 @@ test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"',
     anagrams('A tree, a life, a bench', 'A tree, a fence, a yard')
   ).toBeFalsy();
 });
+
+test('"RAIL! SAFETY!" is an anagaram of "fairy tales" when ignoring speical chars and capitals', () => {
+  expect(anagrams('RAIL! SAFETY!', 'fairy tales')).toBeTruthy();
+});
+
+test('"hello" is an anagram of "Hello!"', () => {
+  expect(anagrams('hello', 'Hello!')).toBeTruthy();
+});
+
+test('"hello" is an anagram of "hello2"', () => {
+  expect(anagrams('hello', 'hello2')).toBeFalsy();
+});
