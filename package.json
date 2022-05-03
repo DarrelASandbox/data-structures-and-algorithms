@@ -1,7 +1,7 @@
 {
-  "name": "algocasts",
+  "name": "data-structures-and-algorithms",
   "version": "1.0.0",
-  "description": "- The Coding Interview Bootcamp: Alogrithms + Data Structures - Ace your next Javascript coding interview by mastering data structures and algorithms. - Tutorial for - [Original Repo: AlgoCasts](https://github.com/StephenGrider/algocasts) - [Stephen Grider](https://github.com/StephenGrider)",
+  "description": "Data Structures & Algorithms",
   "main": "index.js",
   "scripts": {
     "test": "jest"

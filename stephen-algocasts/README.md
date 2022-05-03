@@ -10,7 +10,7 @@
 
 ## Notes
 
-- Command to run a single test file: <code>npm test exercises/fib/test.js</code>
+- Command to run a single test file: <code>npm test stephen-algocasts/vowels/test.js</code>
 
 ### Coding Interview
 
@@ -38,5 +38,14 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 ```
+
+&nbsp;
+
+### Recursion Tips
+
+- Figure out the bare minimum pieces of information to represent your problem
+- Give reasonable defaults to the bare minimum pieces of info
+- Check the base case. Is there any work left to do? If not, return
+- Do some work. Call your function again, making sure the arguments have changed in some fashion
 
 &nbsp;
