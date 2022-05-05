@@ -1,3 +1,22 @@
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+  <li><a href="#coding-interview">Coding Interview</a></li>
+  <li><a href="#recursion-tips">Recursion Tips</a></li>
+  <li><a href="#runtime-complexity">Runtime Complexity</a></li>
+  <li><a href="#space-complexity">Space Complexity</a></li>
+  <li><a href="#memoization">Memoization</a></li>
+    <li>
+      <a href="#data-structures">Data Structures</a>
+      <ol>
+        <li><a href="#stacks--queues">Stacks & Queues</a></li>
+      </ol>
+    </li>
+  </ol>
+</details>
+
+&nbsp;
+
 ## About The Project
 
 - The Coding Interview Bootcamp: Alogrithms + Data Structures
@@ -5,14 +24,15 @@
 - Tutorial for
 - [Original Repo: AlgoCasts](https://github.com/StephenGrider/algocasts)
 - [Stephen Grider](https://github.com/StephenGrider)
+- Command to run a single test file: <code>npm test stephen-algocasts/vowels/test.js</code>
 
 &nbsp;
 
-## Notes
+---
 
-- Command to run a single test file: <code>npm test stephen-algocasts/vowels/test.js</code>
+&nbsp;
 
-### Coding Interview
+## Coding Interview
 
 - <b>Contact Phase: </b>Work experience, side projects & social contacts
   - Talk to recruiter
@@ -41,6 +61,10 @@ function fib(n) {
 
 &nbsp;
 
+---
+
+&nbsp;
+
 ### Recursion Tips
 
 - Figure out the bare minimum pieces of information to represent your problem
@@ -50,7 +74,11 @@ function fib(n) {
 
 &nbsp;
 
-### Runtime Complexity
+---
+
+&nbsp;
+
+## Runtime Complexity
 
 - <b>Constant Time &mdash; 1 :</b> No matter how many elements we're working with, the algorithm/operation/whatever will always take the same amount of time
 - <b>Logarithmic Time &mdash; log(n) :</b> You have this if doubling the number of elements you are iterating over doesn't double the amount of work. Always assume that searching operations are log(n)
@@ -73,7 +101,11 @@ function fib(n) {
 
 &nbsp;
 
-### Space Complexity
+---
+
+&nbsp;
+
+## Space Complexity
 
 - How much more memory is required by doubling the problem set?
 
@@ -83,7 +115,7 @@ function fib(n) {
 
 &nbsp;
 
-### Memoization
+## Memoization
 
 - Store the arguments of each function call along with the result. If the function is called again with the same arguments, return the precomputed result, rather than running the function again
 
@@ -180,6 +212,34 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 > Shouldn't cache object be set to empty object every time we call fib() or memoize()? I can't undestand why isn't this happening.
 
 > <b>Stephen: </b>Each time we memoize a function we are creating a new cache object that is tied to the newly-memoized version of the function. We'd have to re-memoize the function to build a new cache.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Data Structures
+
+- Ways of organizing information with optimal 'runtime complexity' for adding or removing records
+- Javascript natively implements several data structures (Array). You will still be asked about <i>inferior</i> data structures (Queue).
+
+&nbsp;
+
+### Stacks & Queues
+
+- Queue : FIFO
+- Stack : LIFO
+
+> <b>Piyush: </b> Aren't stacks follow LIFO? So why do we have push and pop instead of unshift and shift? Could someone clear this out??
+
+> <b>Shivam: </b>Yes, stacks follow LIFO. Also stacks have this principle - You insert and remove elements to the stack always from the same end. If you are using an array to implement your stack, then push and pop work on the right end of the array, unshift and shift work on the left end of the array. You can choose any one of the ends for your stack. Hope this clears your doubt.
+
+> <b>Robinson: </b>For anyone reading this, Array.shift() and Array.Unshift() are O(n) functions while push and pop are O(1). You should always favor push and pop any day.
+>
+> For a quick explanation, imagine an array with 100 records inside. Each one of those records already have an index assigned. If you push and pop, you're not messing with the index of any of those records. O(1).
+>
+> When you shift and unshift however, the indexes are reassigned across the board. O(n).
 
 &nbsp;
 
