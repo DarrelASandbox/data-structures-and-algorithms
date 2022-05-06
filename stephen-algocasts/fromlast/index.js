@@ -11,6 +11,22 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+const fromLast = (list, n) => {
+  let node = list.head;
+  let pointer1 = node;
+  let pointer2 = node;
+
+  while (n > 0) {
+    pointer2 = pointer2.next;
+    n--;
+  }
+
+  while (pointer2.next) {
+    pointer1 = pointer1.next;
+    pointer2 = pointer2.next;
+  }
+
+  return pointer1;
+};
 
 module.exports = fromLast;

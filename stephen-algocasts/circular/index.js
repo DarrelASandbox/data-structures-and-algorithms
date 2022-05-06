@@ -12,6 +12,18 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+const circular = (list) => {
+  let node = list.head;
+  let pointer1 = node;
+  let pointer2 = node;
+
+  while (pointer2.next && pointer2.next.next) {
+    pointer1 = pointer1.next;
+    pointer2 = pointer2.next.next;
+    if (pointer1 === pointer2) return true;
+  }
+
+  return false;
+};
 
 module.exports = circular;

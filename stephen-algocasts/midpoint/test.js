@@ -8,6 +8,11 @@ test('Midpoint is a function', () => {
 });
 
 describe('Midpoint returns the middle node of an odd numbered list', () => {
+  test('when the list is empty', () => {
+    const l = new LinkedList();
+    expect(l.getLast()).toBeNull();
+  });
+
   test('when the list has 3 elements', () => {
     const l = new LinkedList();
     l.insertLast('a');
