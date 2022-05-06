@@ -10,7 +10,7 @@ test('Node is a class', () => {
   expect(typeof Node.prototype.constructor).toEqual('function');
 });
 
-describe.skip('A Node', () => {
+describe('A Node', () => {
   test('has properties "data" and "next"', () => {
     const node = new Node('a', 'b');
     expect(node.data).toEqual('a');
@@ -18,7 +18,7 @@ describe.skip('A Node', () => {
   });
 });
 
-describe.skip('Insert First', () => {
+describe('Insert First', () => {
   test('appends a node to the start of the list', () => {
     const l = new List();
     l.insertFirst(1);
@@ -28,7 +28,7 @@ describe.skip('Insert First', () => {
   });
 });
 
-describe.skip('Size', () => {
+describe('Size', () => {
   test('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -40,7 +40,7 @@ describe.skip('Size', () => {
   });
 });
 
-describe.skip('GetFirst', () => {
+describe('GetFirst', () => {
   test('returns the first element', () => {
     const l = new List();
     l.insertFirst(1);
@@ -50,9 +50,10 @@ describe.skip('GetFirst', () => {
   });
 });
 
-describe.skip('GetLast', () => {
+describe('GetLast', () => {
   test('returns the last element', () => {
     const l = new List();
+    expect(l.getLast()).toBeNull();
     l.insertFirst(2);
     expect(l.getLast()).toEqual({ data: 2, next: null });
     l.insertFirst(1);
@@ -60,7 +61,7 @@ describe.skip('GetLast', () => {
   });
 });
 
-describe.skip('Clear', () => {
+describe('Clear', () => {
   test('empties out the list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -74,7 +75,7 @@ describe.skip('Clear', () => {
   });
 });
 
-describe.skip('RemoveFirst', () => {
+describe('RemoveFirst', () => {
   test('removes the first node when the list has a size of one', () => {
     const l = new List();
     l.insertFirst('a');
@@ -97,7 +98,7 @@ describe.skip('RemoveFirst', () => {
   });
 });
 
-describe.skip('RemoveLast', () => {
+describe('RemoveLast', () => {
   test('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
@@ -135,22 +136,26 @@ describe.skip('RemoveLast', () => {
   });
 });
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List();
-    l.insertFirst('a');
+    l.insertLast('a');
 
-    l.insertLast('b');
+    expect(l.getLast().data).toEqual('a');
 
-    expect(l.size()).toEqual(2);
-    expect(l.getLast().data).toEqual('b');
+    l.insertFirst('b');
+    l.insertLast('c');
+
+    expect(l.size()).toEqual(3);
+    expect(l.getLast().data).toEqual('c');
   });
 });
 
-describe.skip('GetAt', () => {
+describe('GetAt', () => {
   test('returns the node at given index', () => {
     const l = new List();
     expect(l.getAt(10)).toEqual(null);
+    expect(l.getAt(-1)).toEqual(null);
 
     l.insertLast(1);
     l.insertLast(2);
@@ -161,10 +166,11 @@ describe.skip('GetAt', () => {
     expect(l.getAt(1).data).toEqual(2);
     expect(l.getAt(2).data).toEqual(3);
     expect(l.getAt(3).data).toEqual(4);
+    expect(l.getAt(100)).toEqual(null);
   });
 });
 
-describe.skip('RemoveAt', () => {
+describe('RemoveAt', () => {
   test('removeAt doesnt crash on an empty list', () => {
     const l = new List();
     expect(() => {
@@ -217,7 +223,7 @@ describe.skip('RemoveAt', () => {
   });
 });
 
-describe.skip('InsertAt', () => {
+describe('InsertAt', () => {
   test('inserts a new node with data at the 0 index when the list is empty', () => {
     const l = new List();
     l.insertAt('hi', 0);
@@ -272,7 +278,7 @@ describe.skip('InsertAt', () => {
   });
 });
 
-describe.skip('ForEach', () => {
+describe('ForEach', () => {
   test('applies a transform to each node', () => {
     const l = new List();
 
@@ -281,7 +287,7 @@ describe.skip('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
+    l.forEach((node) => {
       node.data += 10;
     });
 
@@ -292,7 +298,7 @@ describe.skip('ForEach', () => {
   });
 });
 
-describe.skip('for...of loops', () => {
+describe('for...of loops', () => {
   test('works with the linked list', () => {
     const l = new List();
 

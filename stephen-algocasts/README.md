@@ -246,3 +246,30 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 ---
 
 &nbsp;
+
+### Linked Lists
+
+&nbsp;
+
+![diagrams-10-linkedlist](0-diagrams/diagrams-10-linkedlist.png)
+
+|     Previous      |        Reuse & refactor        |
+| :---------------: | :----------------------------: |
+| insertFirst(data) |       insertAt(data, 0)        |
+| insertLast(data)  | insertAt(data, this.size() -1) |
+|   removeFirst()   |          removeAt(0)           |
+|   removeLast()    |   removeAt(this.size() - 1)    |
+|    getFirst()     |            getAt(0)            |
+|     getLast()     |     getAt(this.size() - 1)     |
+
+- [MDN - Iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+
+> <b>Aniket: </b>How is <code>\*\[Symbol.iterator\]\(\)</code> getting invoked by for...of
+
+> <b>Stephen: </b> For...Of loops are built to automatically look for a key of Symbol.Iterator.
+
+&nbsp;
+
+---
+
+&nbsp;

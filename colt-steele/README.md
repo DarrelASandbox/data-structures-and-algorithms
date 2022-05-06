@@ -1,8 +1,27 @@
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#data-structures">Data Structures</a>
+      <ol>
+        <li><a href="#stacks--queues">Stacks & Queues</a></li>
+        <li><a href="#singly-linked-list">Singly Linked List</a></li>
+        <li><a href="#doubly-linked-list">Doubly Linked List</a></li>
+      </ol>
+    </li>
+  </ol>
+</details>
+
+&nbsp;
+
 ## About The Project
 
 - JavaScript Algorithms and Data Structures Masterclass
 - The Missing Computer Science and Coding Interview Bootcamp
 - [Colt Steele](https://github.com/Colt)
+- [Colt Steele Slides](https://cs.slides.com/colt_steele/)
+- [Function Timer Demo](https://rithmschool.github.io/function-timer-demo/)
+- Went through this course way before I actively use GitHub. So I will be porting in notes from my pc from time to time.
 
 &nbsp;
 
@@ -10,11 +29,74 @@
 
 &nbsp;
 
-## Notes
+## Data Structures
 
-- Went through this course way before I actively use GitHub. So I will be porting in notes from my pc from time to time.
-- [Colt Steele Slides](https://cs.slides.com/colt_steele/)
-- [Function Timer Demo](https://rithmschool.github.io/function-timer-demo/)
+[MDN JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
+- Data structures are collections of values, the relationships among them, and the functions or operations that can be applied to the data.
+- Different data structures excel at different things. Some are highly specialized, while others (like arrays) are more generally used.
+
+<table>
+  <tr>
+    <th colspan="5">Data Structures</th>
+  </tr>
+  <tr>
+    <th>Data Structures</th>
+    <th>Insertion</th>
+    <th>Removal</th>
+    <th>Searching</th>
+    <th>Access</th>
+  </tr>
+  <tr>
+    <td>Singly Linked Lists</td>
+    <td>O(1)</td>
+    <td>O(1) or O(n)</td>
+    <td>O(n)</td>
+    <td>O(n)</td>
+  </tr>
+  <tr>
+    <td>Doubly Linked Lists</td>
+    <td>O(1)</td>
+    <td>O(1)</td>
+    <td>O(n)</td>
+    <td>O(n)</td>
+  </tr>
+  <tr>
+    <td>Stacks</td>
+    <td>O(1)</td>
+    <td>O(1)</td>
+    <td>O(n)</td>
+    <td>O(n)</td>
+  </tr>
+  <tr>
+    <td>Queues</td>
+    <td>O(1)</td>
+    <td>O(1)</td>
+    <td>O(n)</td>
+    <td>O(n)</td>
+  </tr>
+  <tr>
+    <td>Binary Search Tree</td>
+    <td>O(log n)</td>
+    <td></td>
+    <td>O(log n)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Binary Heaps</td>
+    <td>O(log n)</td>
+    <td>O(log n)</td>
+    <td>O(n)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Binary Heaps</td>
+    <td>O(1)</td>
+    <td>O(1)</td>
+    <td></td>
+    <td>O(1)</td>
+  </tr>
+</table>
 
 &nbsp;
 
@@ -43,6 +125,43 @@
 > <b>Alan: </b>You're right in that the popped node object will have a reference to the next item in the stack But since we're returning its value--and not the node object itself--the object will never be referenced again (by a variable or as a property in another object). This means that it'll get picked up by the engine's garbage collector! So it can never affect the stack once popped (only its value property is returned), and <b>no memory leak takes place (there's no longer a reference to the node object)</b>
 
 - <b>Queue: </b>FIFO
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Singly Linked List
+
+```js
+let first = new SinglyLinkedListNode('Hi');
+first.next = new SinglyLinkedListNode('How');
+first.next.next = new SinglyLinkedListNode('Are');
+first.next.next.next = new SinglyLinkedListNode('You');
+```
+
+![singly-linked-list](0-slides/singly-linked-list.png)
+
+- A data structure that contains a head, tail and length property.
+- Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
+- For removal, it will be the best at the start as compared to the end.
+- Singly linked list is strong in insertion and removal. Arrays are good for random acccess.
+
+![reverse-singly-linked-list](0-slides/reverse-singly-linked-list.png)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Doubly Linked List
+
+- Almost identical to singly linked list except there is an additional pointer to previous nodes.
+- Better than singly linked list for finding nodes and can be done in half the time!
+- However, they do take up more memory considering the extra pointer.
+- Doubly linked lists are used to implement other data structures and certain types of caches.
 
 &nbsp;
 
