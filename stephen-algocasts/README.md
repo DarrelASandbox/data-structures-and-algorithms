@@ -1,20 +1,26 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-  <li><a href="#coding-interview">Coding Interview</a></li>
-  <li><a href="#recursion-tips">Recursion Tips</a></li>
-  <li><a href="#runtime-complexity">Runtime Complexity</a></li>
-  <li><a href="#space-complexity">Space Complexity</a></li>
-  <li><a href="#memoization">Memoization</a></li>
-    <li>
-      <a href="#data-structures">Data Structures</a>
+    <li><a href="#coding-interview">Coding Interview</a></li>
+    <li><a href="#recursion-tips">Recursion Tips</a></li>
+    <li><a href="#runtime-complexity">Runtime Complexity</a></li>
+    <li><a href="#space-complexity">Space Complexity</a></li>
+    <li><a href="#memoization">Memoization</a></li>
+    <li><a href="#data-structures">Data Structures</a>
       <ol>
         <li><a href="#stacks--queues">Stacks & Queues</a></li>
         <li><a href="#linked-lists">Linked Lists</a></li>
         <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
-  <li><a href="#how-would-you-design-twitter">How would you design Twitter?</a></li>
+    <li><a href="#how-would-you-design-twitter">How would you design Twitter?</a></li>
+    <li><a href="#sorting-algorithms">Sorting Algorithms</a>
+      <ol>
+        <li><a href="#bubble-sort">Bubble Sort</a></li>
+        <li><a href="#selection-sort">Selection Sort</a></li>
+        <li><a href="#merged-sort">Merged Sort</a></li>
+      </ol>
+    </li>
   </ol>
 </details>
 
@@ -343,6 +349,38 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 ![diagrams-09-load-balancer.](0-diagrams/diagrams-09-load-balancer.png)
 
 - Load balancer with horizontal scaling
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Sorting Algorithms
+
+### Bubble Sort
+
+|     Name      | Worst Case Runtime | Difficulty |
+| :-----------: | :----------------: | :--------: |
+|  BubbleSort   |   n<sup>2</sup>    |  easiest   |
+| SelectionSort |   n<sup>2</sup>    |   easier   |
+|   MergeSort   |     n\*log(n)      |   medium   |
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Selection Sort
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Merged Sort
 
 &nbsp;
 

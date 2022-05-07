@@ -10,6 +10,11 @@
         <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
+    <li><a href="#sorting-algorithms">Sorting Algorithms</a>
+      <ol>
+        <li><a href="#bubble-sort">Bubble Sort</a></li>
+      </ol>
+    </li>
   </ol>
 </details>
 
@@ -37,7 +42,7 @@
 - Data structures are collections of values, the relationships among them, and the functions or operations that can be applied to the data.
 - Different data structures excel at different things. Some are highly specialized, while others (like arrays) are more generally used.
 
-<table>
+<table align="center">
   <tr>
     <th colspan="5">Data Structures</th>
   </tr>
@@ -224,6 +229,128 @@ tree.root.left.right = new Node(9);
   - If it is a deep tree then DFS will take up more space.
   - InOrder: Used commonly with BST
   - PreOrder: Can be used to 'export' a tree strcture so that it is easily reconstructed or copied.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Sorting Algorithms
+
+- <b>Linear Search</b>
+  - indexOf
+  - includes
+  - find
+  - findIndex
+
+&nbsp;
+
+<table align="center">
+  <tr><th colspan="3">Linear Search Big O</th></tr>
+  <tr>
+    <td>O(1) Best</td>
+    <td>O(n) Average</td>
+    <td>O(n) Worst</td>
+  </tr>
+  <tr><th colspan="3">Binary Search Big O</th></tr>
+  <tr>
+    <td>O(1) Best</td>
+    <td colspan="2">O(log n) Worst and Average</td>
+  </tr>
+  <tr><th colspan="3"></th></tr>
+  <tr><th colspan="3">Naive String Search O(nm)</th></tr>
+  <tr><th colspan="3">KMP O(n + m) time, O(m) space</th></tr>
+</table>
+
+&nbsp;
+
+- <b>Binary Search</b>
+  - Binary search is a much faster form of search
+  - Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
+  - Binary search only works on sorted arrays!
+
+&nbsp;
+
+- <b>Elementary Sorting Alogrithms</b>
+  - <b>Bubble Sort:</b> A sorting algorithm where the largest values bubble up to the top!
+  - <b>Selection Sort:</b> Similar to Bubble Sort, but instead of first placing large values into sorted position, it places small values into sorted position.
+    - Selection Sort > Bubble Sort if you are in a situation whereby you want to <b>minimize the number of swaps.</b>
+  - <b>Insertion Sort:</b> Builds up the sort by gradually creating a larger left half which is always sorted.
+    - Insertion Sort is good for <b>online algorithm</b> to process input piece by piece.
+
+&nbsp;
+
+<table align="center">
+  <tr><th colspan='5'>Intermediate Sorting Algorithms</th></tr>
+  <tr>
+    <th>Algorithm</th>
+    <th>Time Complexity (Best)</th>
+    <th>Time Complexity (Average)</th>
+    <th>Time Complexity (Worst)</th>
+    <th>Space Complexity</th>
+  </tr>
+  <tr>
+    <td>Merge Sort</td>
+    <td>O(n log n)</td>
+    <td>O(n log n)</td>
+    <td>O(n log n)</td>
+    <td>O(n)</td>
+  </tr>
+  <tr>
+    <td>Quick Sort</td>
+    <td>O(n log n)</td>
+    <td>O(n log n)</td>
+    <td>O(n^2)</td>
+    <td>O(log n)</td>
+  </tr>
+  <tr>
+    <td>Radix Sort</td>
+    <td>O(nk)</td>
+    <td>O(nk)</td>
+    <td>O(nk)</td>
+    <td>O(n + k)</td>
+  </tr>
+</table>
+
+&nbsp;
+
+- <b>Intermediate Sorting Algorithms</b>
+  - <b>Merge Sort: </b>It's a combination of two things - merging and sorting!
+    - Exploits the fact that arrays of 0 or 1 element are always sorted.
+    - Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
+  - <b>Quick Sort:</b> Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted.
+    - Works by selecting one element (called the <b>"pivot"</b>) and finding the index where the pivot should end up in the sorted array.
+    - Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot.
+    - The runtime of quick sort depends in part on how one selects the pivot.
+    - Ideally, the <b>pivot should be chosen so that it's roughly the median value in the data set you're sorting.</b>
+    - For simplicity, we'll always choose the pivot to be the first element (we'll talk about consequences of this later)
+    - Worse Case [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  - <b>Radix Sort:</b>
+    - Is a special sorting algorithm that works on lists of numbers.
+    - It never makes comparisons between elements!
+    - It exploits the fact that information about the size of a number is encoded in the number of digits. More digits means a bigger number!
+    - It is a integer sort.
+    - In <b>O(nk) n</b> refers to the length of array & <b>k</b> refers to the number of digits(average).
+
+### Bubble Sort
+
+```js
+// ES5
+function swap(arr, idx1, idx2) {
+  var temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
+
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+```
+
+- Optimize BubbleSort with the outer loop starting from the end.
+- And use noSwaps for almost sorted array.
 
 &nbsp;
 
