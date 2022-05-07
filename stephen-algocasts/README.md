@@ -10,6 +10,8 @@
       <a href="#data-structures">Data Structures</a>
       <ol>
         <li><a href="#stacks--queues">Stacks & Queues</a></li>
+        <li><a href="#linked-lists">Linked Lists</a></li>
+        <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
   </ol>
@@ -267,6 +269,37 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 > <b>Aniket: </b>How is <code>\*\[Symbol.iterator\]\(\)</code> getting invoked by for...of
 
 > <b>Stephen: </b> For...Of loops are built to automatically look for a key of Symbol.Iterator.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Trees
+
+- <b>Breath-First-Search & Depth-First-Search</b>
+
+![diagrams-05-breadth](0-diagrams/diagrams-05-breadth.png)
+![diagrams-06-depth](0-diagrams/diagrams-06-depth.png)
+
+&nbsp;
+
+![diagrams-12-why-bfs](0-diagrams/diagrams-12-why-bfs.png)
+
+&nbsp;
+
+- <b>Binary-Search-Tree</b>
+
+![diagrams-13-bst](0-diagrams/diagrams-13-bst.png)
+
+> <b>Ray: </b>Handling insert in BST when data equals another node
+
+> <b>Stephen: </b>Hi Ray - Great question, as you saw, there are contradictions on how to best handle this. I decided to just leave it out. If 'insertion' comes up in an interview, best to ask your interviewer how to handle duplicate values.
+
+> <b>Thomas: </b>I chose to handle duplicate values in insert by doing... nothing.
+>
+> If you think about the purpose of a binary search tree, there's absolutely no valid reason to add a duplicate element (and by duplicate I do mean an element whose data is strictly identical to that of an existing node). It could return an error, although imo it'd make more sense to simply return the original node holding the value being duplicated (but then you'd have to return the newly created node in case of a normal insertion to be consistent with your return values).
 
 &nbsp;
 

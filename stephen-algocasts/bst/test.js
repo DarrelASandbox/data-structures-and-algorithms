@@ -9,6 +9,7 @@ test('Node can insert correctly', () => {
   node.insert(5);
   node.insert(15);
   node.insert(17);
+  expect(() => node.insert(10)).toThrow('Duplicate data');
 
   expect(node.left.data).toEqual(5);
   expect(node.right.data).toEqual(15);

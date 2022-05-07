@@ -7,6 +7,7 @@
         <li><a href="#stacks--queues">Stacks & Queues</a></li>
         <li><a href="#singly-linked-list">Singly Linked List</a></li>
         <li><a href="#doubly-linked-list">Doubly Linked List</a></li>
+        <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
   </ol>
@@ -162,6 +163,67 @@ first.next.next.next = new SinglyLinkedListNode('You');
 - Better than singly linked list for finding nodes and can be done in half the time!
 - However, they do take up more memory considering the extra pointer.
 - Doubly linked lists are used to implement other data structures and certain types of caches.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Trees
+
+```js
+tree.root = new Node(10);
+tree.root.right = new Node(15);
+tree.root.left = new Node(7);
+tree.root.left.right = new Node(9);
+```
+
+- <b>Trees: </b>A data structure that consists of nodes in a parent / child relationship.
+  - <b>Lists: </b> linear & Trees - nonlinear.
+  - <b>Root: </b> The top node in a tree.
+  - <b>Child: </b>A node directly connected to another node when moving away from the Root.
+  - <b>Parent: </b> The converse notion of a child.
+  - <b>Siblings: </b>A group of nodes with the same parent.
+  - <b>Leaf: </b> A node with no children.
+  - <b>Edge: </b> The connection between one node and another.
+    - Applications:
+      - HTML DOM
+      - Network Routing
+      - Abstract Syntax Tree
+      - Artificial Intelligence
+      - Folders in Operating Systems
+      - Computer File Systems
+
+&nbsp;
+
+- <b>Binary Trees</b>
+  - Decision Trees (true / false)
+  - Database Indicies
+  - Sorting Algorithms
+
+&nbsp;
+
+- <b>Binary Search Trees</b>
+  - Every parent node has at most two children.
+  - Every node to the left of a parent node is always less than the parent.
+  - Every node to the right of a parent node is always greater than the parent.
+
+&nbsp;
+
+- <b>Tree Traversal</b>
+  - Visit every node once.
+  - Breadth First Search
+  - Depth First Search: PreOrder, PostOrder & InOrder
+
+&nbsp;
+
+- <b>Breath-First-Search VS Depth-First-Search:</b>
+  - Time complexity is the same, space complexity depends on how wide is the tree.
+  - BFS will take up a lot more space for queue is the tree is wide.
+  - If it is a deep tree then DFS will take up more space.
+  - InOrder: Used commonly with BST
+  - PreOrder: Can be used to 'export' a tree strcture so that it is easily reconstructed or copied.
 
 &nbsp;
 
