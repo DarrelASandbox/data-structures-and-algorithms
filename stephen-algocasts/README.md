@@ -14,6 +14,7 @@
         <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
+  <li><a href="#how-would-you-design-twitter">How would you design Twitter?</a></li>
   </ol>
 </details>
 
@@ -300,6 +301,48 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 > <b>Thomas: </b>I chose to handle duplicate values in insert by doing... nothing.
 >
 > If you think about the purpose of a binary search tree, there's absolutely no valid reason to add a duplicate element (and by duplicate I do mean an element whose data is strictly identical to that of an existing node). It could return an error, although imo it'd make more sense to simply return the original node holding the value being duplicated (but then you'd have to return the newly created node in case of a normal insertion to be consistent with your return values).
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### How would you design Twitter?
+
+- <b>High level notes</b>
+  - There is no right answer
+  - Every interviewer will expect a different answer
+  - Focus is usually on the data model
+    - If interviewer doesn't have any preference
+  - Don't mention specific technologies
+  - Draw stuff
+  - Talk
+
+![diagrams-04-approach](0-diagrams/diagrams-04-approach.png)
+
+- <b>Process</b>
+  - Identify Two Core Features
+  - Possible Implementation
+  - Identify and Address Difficulties
+  - Solutions for scaling
+
+&nbsp;
+
+- <b>Tweeting:</b>
+  - What does a tweet look like in the DB?
+  - How to make the '#topic' and '@mention' systems?
+  - How to implement retweets?
+- <b>Feed:</b> How to show interesting tweets at top of feed?
+- <b>Scaling for Users:</b> Caching & Deployment Options
+
+![diagrams-08-caching](0-diagrams/diagrams-08-caching.png)
+
+- Store top tweets in memory store
+
+![diagrams-09-load-balancer.](0-diagrams/diagrams-09-load-balancer.png)
+
+- Load balancer with horizontal scaling
 
 &nbsp;
 
