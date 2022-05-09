@@ -2,6 +2,7 @@
 
 - The runtime reflected in the solutions is inaccurate. You are better off with asymptotic analysis (Big-O Notation).
 - Refer to the respective link to leetcode website to get the full problem information including constraint, diagram, etc.
+- Use [Pastebin](https://pastebin.com/) to code before copy and paste the code into compare.txt file to check the difference between your code and the solution.
 
 ## Patterns
 
@@ -19,3 +20,12 @@
 12. Top K elements
 13. K-way Merge
 14. Topological sort
+
+## Problems
+
+|  No  |       Title       | Difficulty |   Pattern    |
+| :--: | :---------------: | :--------: | :----------: |
+| 0001 |      Two Sum      |    Easy    |   Hashmap    |
+| 0002 |  Add Two Numbers  |   Medium   | Linked List  |
+| 0015 |       3Sum        |   Medium   | Two Pointers |
+| 0498 | Diagonal Traverse |   Medium   |    Matrix    |
