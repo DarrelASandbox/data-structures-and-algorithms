@@ -11,6 +11,9 @@
         <li><a href="#singly-linked-list">Singly Linked List</a></li>
         <li><a href="#doubly-linked-list">Doubly Linked List</a></li>
         <li><a href="#trees">Trees</a></li>
+        <li><a href="#binary-heaps">Binary Heaps</a></li>
+        <li><a href="#hash-tables">Hash Tables</a></li>
+        <li><a href="#graphs">Graphs</a></li>
       </ol>
     </li>
     <li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
@@ -437,6 +440,166 @@ tree.root.left.right = new Node(9);
   - If it is a deep tree then DFS will take up more space.
   - InOrder: Used commonly with BST
   - PreOrder: Can be used to 'export' a tree strcture so that it is easily reconstructed or copied.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Binary Heaps
+
+- <b>Math</b>
+  - For any index of an array n...
+  - The left child is stored at 2n + 1
+  - The right child is at 2n + 2
+- <b>Finding the parent using the child node</b>
+  - For any child node at index n...
+  - Its parent is at index (n-1)/2
+- In a <b>MaxBinaryHeap</b>, parent nodes are always larger than child nodes.
+- In a <b>MinBinaryHeap</b>, parent nodes are always smaller than child nodes.
+- Commonly used to implement Priority Queues.
+- Also used in graph traversal algorithms.
+- Construct it using a list/ array.
+
+```js
+// There is some magic ?. in dequeue
+const maxChildIndex =
+  this.values[right]?.priority < this.values[left]?.priority ? right : left;
+if (this.values[maxChildIndex]?.priority < this.values[i]?.priority) {
+  {...};
+}
+```
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Hash Tables
+
+- Hash tables are used to store key-value pairs.
+- They are like arrays, but the keys are not ordered.
+- Unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values, and removing values!
+- <b>What makes a good hash?</b>
+  - Fast (i.e. constant time)
+  - Doesn't cluster outputs at specific indices, but distributes uniformly
+  - Deterministic (same input yields same output)
+- <b>Dealing with collisions</b>
+  - With separate chaining, at each index in our array we store values using a more sophisticated data structure (e.g. an array or a linked list).
+  - This allows us to store multiple key-value pairs at the same index.
+  - With linear probing, when we find a collision, we search through the array to find the next empty slot.
+  - Unlike with separate chaining, this allows us to store a single key-value at each index.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### Graphs
+
+- Use for Social Networks, Recommendations, Location / Mapping, Routing Algorithms, Visual Hierarchy, File System Optimizations & etc...
+- Vertex - a node
+- Edge - connection between nodes
+- Weighted/Unweighted - values assigned to distances between vertices
+- Directed/Undirected - directions assigned to distanced between vertices
+
+&nbsp;
+
+- Differences & Big O
+- | V | - number of vertices
+- | E | - number of edges
+
+&nbsp;
+
+<table align="center">
+  <tr>
+    <th>Operation</th>
+    <th>Adjacency List</th>
+    <th>Adjacency Matrix</th>
+  </tr>
+  <tr>
+    <td>Add Vertex</td>
+    <td>O(1)</td>
+    <td>O ( | V^2 | )</td>
+  </tr>
+  <tr>
+    <td>Add Edge</td>
+    <td>O(1)</td>
+    <td>O(1)</td>
+  </tr>
+  <tr>
+    <td>Remove Vertex</td>
+    <td>O ( | V | + | E | )</td>
+    <td>O ( | V^2 | )</td>
+  </tr>
+  <tr>
+    <td>Remove Edge</td>
+    <td>O( | E | )</td>
+    <td>O(1)</td>
+  </tr>
+  <tr>
+    <td>Query</td>
+    <td>O ( | V | + | E | )</td>
+    <td>O (1)</td>
+  </tr>
+  <tr>
+    <td>Storage</td>
+    <td>O ( | V | + | E | )</td>
+    <td>O ( | V^2 | )</td>
+  </tr>
+</table>
+
+&nbsp;
+
+<table align="center">
+  <tr>
+    <th>Adjacency List</th>
+    <th>Adjacency Matrix</th>
+  </tr>
+  <tr>
+    <td>Can take up less space (in sparse graphs)</td>
+    <td>Takes up more space (in sparse graphs)</td>
+  </tr>
+  <tr>
+    <td>Faster to iterate over all edges</td>
+    <td>Slower to iterate over all edges</td>
+  </tr>
+  <tr>
+    <td>Can be slower to lookup specific edge</td>
+    <td>Faster to lookup specific edge</td>
+  </tr>
+</table>
+
+&nbsp;
+
+```js
+// nodes
+Tokyo: ['Dallas', 'Hong Kong'],
+Dallas: ['Tokyo', 'Aspen', 'Hong Kong', 'Los Angeles'],
+Aspen: ['Dallas'],
+'Hong Kong': ['Tokyo', 'Dallas', 'Los Angeles'],
+'Los Angeles': ['Hong Kong', 'Dallas'],
+
+A: ['B', 'C'],
+B: ['A', 'D'],
+C: ['A', 'E'],
+D: ['B', 'E', 'F'],
+E: ['C', 'D', 'E'],
+F: ['D', 'F'],
+```
+
+&nbsp;
+
+- Graphs Traversal
+  - Peer to peer networking, Web crawlers
+  - Finding "closest" matches/recommendations
+  - Shortest path problems
+  - GPS Navigation
+  - Solving mazes
+  - AI (shortest path to win the game)
 
 &nbsp;
 
