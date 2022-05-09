@@ -16,6 +16,7 @@
         <li><a href="#graphs">Graphs</a></li>
       </ol>
     </li>
+    <li><a href="#searching-algorithms">Searching Algorithms</a></li>
     <li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
   </ol>
 </details>
@@ -29,7 +30,7 @@
 - [Colt Steele](https://github.com/Colt)
 - [Colt Steele Slides](https://cs.slides.com/colt_steele/)
 - [Function Timer Demo](https://rithmschool.github.io/function-timer-demo/)
-- Went through this course way before I actively use GitHub. So I will be porting in notes from my pc from time to time.
+- Went through this course way before I actively use GitHub. So I will be porting in notes from my pc from time to time. (Completed)
 
 &nbsp;
 
@@ -187,6 +188,11 @@
 
 &nbsp;
 
+- <b>Interview tips</b>
+  - It is also common that the interviewer asks you extension questions, such as how you would handle the problem if the whole input is too large to fit into memory, or if the input arrives as a stream. This is a common follow-up question at Google, where they care a lot about scale. The answer is usually a divide-and-conquer approach — perform distributed processing of the data and only read certain chunks of the input from disk into memory, write the output back to disk and combine them later.
+
+&nbsp;
+
 ---
 
 &nbsp;
@@ -230,6 +236,14 @@ function outer(input) {
 ```
 
 - <b>Dynamic Programming</b>
+  - Overlapping Subproblems
+  - Optimal Substructure
+  - Recursive vs Dynamic Programming
+  - Recursion + Memoization
+  - Top-down VS Bottom-up
+  - Tabulation:
+    - Storing the result of a previous result in a "table" (usually an array)
+    - Usually done using iteration. Better space complexity can be achieved using tabulation
 - <b>Greedy Algorithms</b>
 - <b>Backtracking</b>
 
@@ -607,7 +621,7 @@ F: ['D', 'F'],
 
 &nbsp;
 
-## Sorting Algorithms
+## Searching Algorithms
 
 - <b>Linear Search</b>
   - indexOf
@@ -642,6 +656,21 @@ F: ['D', 'F'],
   - Binary search only works on sorted arrays!
 
 &nbsp;
+
+- Why is Dijkstra Algorithm useful?
+  - GPS - finding fastest route
+  - Network Routing - finds open shortest path for data
+  - Biology - used to model the spread of viruses among humans
+  - Airline tickets - finding cheapest route to your destination
+  - Many other uses!
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Sorting Algorithms
 
 <table align="center">
   <tr><th colspan='5'>Elementart Sorting Algorithms</th></tr>
