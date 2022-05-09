@@ -13,11 +13,7 @@
         <li><a href="#trees">Trees</a></li>
       </ol>
     </li>
-    <li><a href="#sorting-algorithms">Sorting Algorithms</a>
-      <ol>
-        <li><a href="#bubble-sort">Bubble Sort</a></li>
-      </ol>
-    </li>
+    <li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
   </ol>
 </details>
 
@@ -196,7 +192,7 @@
 
 - <b>Frequency Counter:</b>
   - This pattern uses objects or sets to collect values/ frequencies of values.
-  - This can often avoid the need for nested loops or O(N^2) operations with arrays/ strings.
+  - This can often avoid the need for nested loops or O(N<sup>2</sup>) operations with arrays/ strings.
 - <b>Multiple Pointers:</b>
   - Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain conditiion.
   - Very efficient for solving problems with minimal space complexity as well.
@@ -250,8 +246,7 @@ else frequencyCounter1[val] = 1;
 
 ## Data Structures
 
-[MDN JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-
+- [MDN JavaScript Data Types and Data Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - Data structures are collections of values, the relationships among them, and the functions or operations that can be applied to the data.
 - Different data structures excel at different things. Some are highly specialized, while others (like arrays) are more generally used.
 
@@ -485,6 +480,40 @@ tree.root.left.right = new Node(9);
 
 &nbsp;
 
+<table align="center">
+  <tr><th colspan='5'>Elementart Sorting Algorithms</th></tr>
+  <tr>
+    <th>Algorithm</th>
+    <th>Time Complexity (Best)</th>
+    <th>Time Complexity (Average)</th>
+    <th>Time Complexity (Worst)</th>
+    <th>Space Complexity</th>
+  </tr>
+  <tr>
+    <td>Bubble Sort</td>
+    <td>O(n)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(1)</td>
+  </tr>
+  <tr>
+    <td>Insertion Sort</td>
+    <td>O(n)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(1)</td>
+  </tr>
+  <tr>
+    <td>Selection Sort</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(n<sup>2</sup>)</td>
+    <td>O(1)</td>
+  </tr>
+</table>
+
+&nbsp;
+
 - <b>Elementary Sorting Alogrithms</b>
   - <b>Bubble Sort:</b> A sorting algorithm where the largest values bubble up to the top!
   - <b>Selection Sort:</b> Similar to Bubble Sort, but instead of first placing large values into sorted position, it places small values into sorted position.
@@ -492,7 +521,22 @@ tree.root.left.right = new Node(9);
   - <b>Insertion Sort:</b> Builds up the sort by gradually creating a larger left half which is always sorted.
     - Insertion Sort is good for <b>online algorithm</b> to process input piece by piece.
 
-&nbsp;
+```js
+// Optimize BubbleSort with the outer loop starting from the end.
+// And use noSwaps for almost sorted array.
+
+// ES5
+function swap(arr, idx1, idx2) {
+  var temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+}
+
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+```
 
 <table align="center">
   <tr><th colspan='5'>Intermediate Sorting Algorithms</th></tr>
@@ -514,7 +558,7 @@ tree.root.left.right = new Node(9);
     <td>Quick Sort</td>
     <td>O(n log n)</td>
     <td>O(n log n)</td>
-    <td>O(n^2)</td>
+    <td>O(n<sup>2</sup>)</td>
     <td>O(log n)</td>
   </tr>
   <tr>
@@ -539,31 +583,15 @@ tree.root.left.right = new Node(9);
     - Ideally, the <b>pivot should be chosen so that it's roughly the median value in the data set you're sorting.</b>
     - For simplicity, we'll always choose the pivot to be the first element (we'll talk about consequences of this later)
     - Worse Case [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    - [Stackoverflow - Quicksort: Choosing the pivot](https://stackoverflow.com/a/164205/13009010)
+    - For most data, picking the first or last is sufficient. But, if you find that you're running into worst case scenarios often (partially sorted input), first option would be to pick the central value (Which is a statistically good pivot for partially sorted data) If you're still running into problems, then go the median route.
   - <b>Radix Sort:</b>
     - Is a special sorting algorithm that works on lists of numbers.
     - It never makes comparisons between elements!
     - It exploits the fact that information about the size of a number is encoded in the number of digits. More digits means a bigger number!
     - It is a integer sort.
     - In <b>O(nk) n</b> refers to the length of array & <b>k</b> refers to the number of digits(average).
-
-### Bubble Sort
-
-```js
-// ES5
-function swap(arr, idx1, idx2) {
-  var temp = arr[idx1];
-  arr[idx1] = arr[idx2];
-  arr[idx2] = temp;
-}
-
-// ES2015
-const swap = (arr, idx1, idx2) => {
-  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-};
-```
-
-- Optimize BubbleSort with the outer loop starting from the end.
-- And use noSwaps for almost sorted array.
+    - No recursion & need to deal with negative numbers separately.
 
 &nbsp;
 

@@ -14,13 +14,7 @@
       </ol>
     </li>
     <li><a href="#how-would-you-design-twitter">How would you design Twitter?</a></li>
-    <li><a href="#sorting-algorithms">Sorting Algorithms</a>
-      <ol>
-        <li><a href="#bubble-sort">Bubble Sort</a></li>
-        <li><a href="#selection-sort">Selection Sort</a></li>
-        <li><a href="#merged-sort">Merged Sort</a></li>
-      </ol>
-    </li>
+    <li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
   </ol>
 </details>
 
@@ -358,29 +352,11 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 
 ## Sorting Algorithms
 
-### Bubble Sort
-
 |     Name      | Worst Case Runtime | Difficulty |
 | :-----------: | :----------------: | :--------: |
 |  BubbleSort   |   n<sup>2</sup>    |  easiest   |
 | SelectionSort |   n<sup>2</sup>    |   easier   |
 |   MergeSort   |     n\*log(n)      |   medium   |
-
-&nbsp;
-
----
-
-&nbsp;
-
-### Selection Sort
-
-&nbsp;
-
----
-
-&nbsp;
-
-### Merged Sort
 
 &nbsp;
 
