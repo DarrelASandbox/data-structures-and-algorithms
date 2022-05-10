@@ -16,13 +16,11 @@ Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
 // Runtime: 60 ms	Memory: 42.1 MB
 const memoize = (fn) => {
   const cache = {};
-  return (...args) => {
-    if (cache[args]) return cache[args];
-    const result = fn(...args); // or fn.apply(this, args)
-    return (cache[args] = result);
-  };
+  return (...args) => (cache[args] ? cache[args] : (cache[args] = fn(...args))); // or fn.apply(this, args)
 };
 
 const fibFn = (n) => (n < 2 ? n : fib(n - 1) + fib(n - 2));
 
 const fib = memoize(fibFn);
+
+console.log(fib(999));
