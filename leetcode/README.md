@@ -23,13 +23,15 @@
 
 ## Problems
 
-|  No  |                  Title                  | Difficulty |                   Pattern                    |
-| :--: | :-------------------------------------: | :--------: | :------------------------------------------: |
-| 0001 |                 Two Sum                 |    Easy    |                   Hashmap                    |
-| 0002 |             Add Two Numbers             |   Medium   |                 Linked List                  |
-| 0015 |                  3Sum                   |   Medium   |                   Pointers                   |
-| 0059 |            Spiral Matrix II             |   Medium   |                    Matrix                    |
-| 0498 |            Diagonal Traverse            |   Medium   |                    Matrix                    |
-| 0509 |            Fibonacci Number             |    Easy    | Recursion, Memoization & Dynamic Programming |
-| 0915 | Partition Array into Disjoint Intervals |   Medium   |                   Pointers                   |
-| 1073 |      Adding Two Negabinary Numbers      |   Medium   |                     Bit                      |
+|  No  |                      Title                      | Difficulty |                   Pattern                    |
+| :--: | :---------------------------------------------: | :--------: | :------------------------------------------: |
+| 0001 |                     Two Sum                     |    Easy    |                   Hashmap                    |
+| 0002 |                 Add Two Numbers                 |   Medium   |                 Linked List                  |
+| 0015 |                      3Sum                       |   Medium   |                   Pointers                   |
+| 0059 |                Spiral Matrix II                 |   Medium   |                    Matrix                    |
+| 0498 |                Diagonal Traverse                |   Medium   |                    Matrix                    |
+| 0509 |                Fibonacci Number                 |    Easy    | Recursion, Memoization & Dynamic Programming |
+| 0560 |              Subarray Sum Equals K              |   Medium   |                   Hashmap                    |
+| 0915 |     Partition Array into Disjoint Intervals     |   Medium   |                   Pointers                   |
+| 1073 |          Adding Two Negabinary Numbers          |   Medium   |                     Bit                      |
+| 1375 | Number of Times Binary String Is Prefix-Aligned |   Medium   |                    Binary                    |
