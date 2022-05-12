@@ -45,6 +45,8 @@
 | 0098 |                     [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)                     |   Medium   |             BST              |
 | 0102 |               [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)               |   Medium   | LOT, BFS, Queue & Recursion  |
 | 0116 |     [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)     |   Medium   | LOT, BFS, Queue & Recursion  |
+| 0124 |                    [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)                    |    Hard    | Binary Tree, DFS & Recursion |
+| 0141 |                               [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               |    Easy    |    Linked List & Pointers    |
 | 0498 |                               [Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)                               |   Medium   |            Matrix            |
 | 0509 |                                [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)                                |    Easy    | Recursion, Memoization & DP  |
 | 0560 |                           [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           |   Medium   |           Hashmap            |
