@@ -26,7 +26,7 @@ const levelOrder = (root) => {
     const qLength = q.length;
     const level = [];
     for (let i = 0; i < qLength; i++) {
-      let node = q.shift();
+      const node = q.shift();
       level.push(node.val);
       if (node.left) q.push(node.left);
       if (node.right) q.push(node.right);
