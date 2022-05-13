@@ -8,7 +8,7 @@ You can return the answer in any order.
 
 // Runtime: 71 ms 	Memory: 42.7 MB
 const twoSum = (nums, target) => {
-  const checkObj = {};
+  const checkObj = {}; // {key: value} as {compliment: i}
   for (let i = 0; i < nums.length; i++) {
     const compliment = target - nums[i];
     if (compliment in checkObj) return [checkObj[compliment], i];

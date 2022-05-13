@@ -1,6 +1,8 @@
 /*
 https://leetcode.com/problems/add-two-numbers/
 https://leetcode.com/problems/add-two-numbers/discuss/1835873/JavaScript-Easy-to-understand-detailed-explanation
+https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value
+https://medium.com/@naveenkarippai/learning-how-references-work-in-javascript-a066a4e15600#:~:text=TL%3BDR%3A%20There%20are%20NO,can%20be%20assigned%20by%20reference.
 
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -24,18 +26,18 @@ function ListNode(val, next) {
 
 // Runtime: 137 ms 	Memory: 46.9 MB
 const addTwoNumbers = (l1, l2) => {
-  let head = new ListNode();
+  let head = new ListNode(); // dummy node
   let curr = head;
   let carry = 0;
 
   while (l1 || l2) {
-    let val1 = l1 !== null ? l1.val : 0;
-    let val2 = l2 !== null ? l2.val : 0;
+    let val1 = l1 ? l1.val : 0;
+    let val2 = l2 ? l2.val : 0;
     let sum = val1 + val2 + carry;
     carry = Math.floor(sum / 10);
     curr.next = new ListNode(sum % 10);
-    if (l1 !== null) l1 = l1.next;
-    if (l2 !== null) l2 = l2.next;
+    if (l1) l1 = l1.next;
+    if (l2) l2 = l2.next;
     curr = curr.next;
   }
 
@@ -45,8 +47,8 @@ const addTwoNumbers = (l1, l2) => {
 
 // Runtime: 150 ms 	Memory: 47.6 MB
 const addTwoNumbers2 = (l1, l2) => {
-  let sumList = new ListNode(0); // Dummy node to initiate returned linked list
-  let sumListHead = sumList; // Keep pointer to result list head
+  let sumListHead = new ListNode(0); // Dummy node to initiate returned linked list
+  let sumList = sumListHead; // sumList points at sumListHead memory address (assign-by-reference)
   let carry = 0;
 
   while (l1 || l2) {
@@ -59,7 +61,7 @@ const addTwoNumbers2 = (l1, l2) => {
 
     let newNodeVal = sum % 10; // New node for results list will have only 1's place
     carry = Math.floor(sum / 10); // Carry will be the integer representing 10's place, which will be added to next sum
-    sumList.next = new ListNode(newNodeVal); // Add new node to results list
+    sumList.next = new ListNode(newNodeVal); // Add new node to results list (To use .next, dummy node sumListHead is needed)
     sumList = sumList.next;
 
     if (l1) l1 = l1.next; //If the lists exist, increment node
@@ -68,7 +70,9 @@ const addTwoNumbers2 = (l1, l2) => {
 
   //If carry still exists, add the carry as the final node of return list
   if (carry) sumList.next = new ListNode(carry);
-  return sumListHead.next;
+  // In the LeetCode compiler, there is some instruction: @return {ListNode}. This indicates you only need to return the first node of the output.
+  // To avoid losing the pointer to the sumListHead node, we need to use a pointer (sumList).
+  return sumListHead.next; // Refer to the beginning of linked list.
 };
 
 // Runtime: 158 ms 	Memory: 47.3 MB

@@ -19,10 +19,10 @@ const threeSum = (nums) => {
 
     while (left < right) {
       const sum = nums[left] + nums[right];
-      const target = 0 - nums[i];
+      const compliment = 0 - nums[i];
 
       // nums[i] + nums[left] + nums[right] = 0 means nums[left] + nums[right] = -nums[i]
-      if (sum === target) {
+      if (sum === compliment) {
         result.push([nums[i], nums[left], nums[right]]);
 
         while (left < right && nums[left] === nums[left + 1]) left++;
@@ -31,8 +31,8 @@ const threeSum = (nums) => {
         left++;
         right--;
       }
-      // since nums is sorted we can increment left or decrement right based on sums value in relation to target
-      else if (sum < target) left++;
+      // since nums is sorted we can increment left or decrement right based on sums value in relation to compliment
+      else if (sum < compliment) left++;
       else right--;
     }
   }
