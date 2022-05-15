@@ -25,15 +25,16 @@
 
 ## Problems
 
-|                          |     |
-| :----------------------: | :-: |
-|   Dynamic Programming    | DP  |
-|    Divide and Conquer    | D&C |
-|  Level Order Traversal   | LOT |
-| Vertical Order Traversal | VOT |
-|    Binary Search Tree    | BST |
-|   Breadth First Search   | BFS |
-|    Depth First Search    | DFS |
+|                                   |      |
+| :-------------------------------: | :--: |
+|        Dynamic Programming        |  DP  |
+|        Divide and Conquer         | D&C  |
+|       Level Order Traversal       | LOT  |
+|     Vertical Order Traversal      | VOT  |
+|        Binary Search Tree         | BST  |
+|       Breadth First Search        | BFS  |
+|        Depth First Search         | DFS  |
+| Floyd’s Cycle Detection Algorithm | FCDA |
 
 &nbsp;
 
@@ -49,6 +50,7 @@
 | 0116 |     [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)     |   Medium   |    LOT, BFS, Queue & Recursion    |
 | 0124 |                    [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)                    |    Hard    |   Binary Tree, DFS & Recursion    |
 | 0141 |                               [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               |    Easy    |      Linked List & Pointers       |
+| 0287 |                       [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                       |   Medium   |        Linked List & FCDA         |
 | 0498 |                               [Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)                               |   Medium   |              Matrix               |
 | 0509 |                                [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)                                |    Easy    |    Recursion, Memoization & DP    |
 | 0560 |                           [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           |   Medium   |              Hashmap              |
@@ -57,5 +59,6 @@
 | 1026 |    [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/)    |   Medium   |   Binary Tree, DFS & Recursion    |
 | 1038 |          [Binary Search Tree to Greater Sum Tree](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/)          |   Medium   |       BST, DFS & Recursion        |
 | 1073 |                   [Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)                   |   Medium   |                Bit                |
+| 1254 |                        [Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/)                        |   Medium   |     Matrix & DFS & Recursion      |
 | 1375 | [Number of Times Binary String Is Prefix-Aligned](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) |   Medium   |        Binary & Recursion         |
 | 1721 |                 [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)                 |   Medium   |      Linked List & Pointers       |
