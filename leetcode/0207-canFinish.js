@@ -30,7 +30,7 @@ Runtime: 121 ms	Memory: 49.2 MB
 Topological Sort + DFS
 */
 const canFinish = (numCourses, prerequisites) => {
-  const graph = new Map(); // {key: value} as {vertex: [edges]}
+  const graph = new Map(); // {key: value} as {vertex: [] of edges}
   const visiting = new Set();
   const visited = new Set();
 

@@ -9,18 +9,18 @@ Output: [1,4,3,2,5]
 */
 
 // Runtime: 648 ms	Memory: 103 MB
-// length - 1 - k = endPointer (idx = 1 + 6)
+// length - 1 - k = endPointer (count = 1 + 6)
 const swapNodes = (head, k) => {
   let startPointer = head;
   let endPointer = head;
   let node = head;
-  let idx = 1;
+  let count = 1;
 
   while (node.next !== null) {
-    if (idx < k) startPointer = startPointer.next;
-    if (idx >= k) endPointer = endPointer.next;
+    if (count < k) startPointer = startPointer.next;
+    if (count >= k) endPointer = endPointer.next;
     node = node.next;
-    idx++;
+    count++;
   }
 
   let temp = startPointer.val;

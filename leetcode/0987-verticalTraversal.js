@@ -41,7 +41,7 @@ const verticalTraversal = (root) => {
   };
 
   dfs(root, 0, 0); // Set coordinates
-  result.sort(comparator); // Sort by col
+  result.sort(comparator); // Sort by col, row & val
 
   const map = new Map(); // {key: value} as {col: [] of values}
   for (const [val, row, col] of result) {

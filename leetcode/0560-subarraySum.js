@@ -10,7 +10,7 @@ Output: 2
 
 // Runtime: 96 ms	Memory: 49.1 MB
 const subarraySum = (nums, k) => {
-  const map = new Map();
+  const map = new Map(); // {key: value} as {sum: occurrences}
   map.set(0, 1);
   let sum = 0;
   let result = 0;

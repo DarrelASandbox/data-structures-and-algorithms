@@ -27,7 +27,7 @@ const bstToGst = (root) => {
   let sum = 0;
 
   const dfs = (node) => {
-    if (!node) return;
+    if (!node) return 0;
     dfs(node.right);
     sum += node.val;
     node.val = sum;
