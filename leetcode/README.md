@@ -43,6 +43,7 @@
 | 0001 |                                         [Two Sum](https://leetcode.com/problems/two-sum/)                                         |    Easy    |                                 Hashmap                                  |
 | 0002 |                                 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                 |   Medium   |                               Linked List                                |
 | 0015 |                                            [3Sum](https://leetcode.com/problems/3sum/)                                            |   Medium   |                                 Pointers                                 |
+| 0020 |                               [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                               |    Easy    |                                  Stack                                   |
 | 0023 |                            [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)                            |    Hard    |                    Linked List, Priority Queue & D&C                     |
 | 0059 |                                [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)                                |   Medium   |                                  Matrix                                  |
 | 0098 |                     [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)                     |   Medium   |                                   BST                                    |
@@ -65,4 +66,5 @@
 | 1073 |                   [Adding Two Negabinary Numbers](https://leetcode.com/problems/adding-two-negabinary-numbers/)                   |   Medium   |                                   Bit                                    |
 | 1254 |                        [Number of Closed Islands](https://leetcode.com/problems/number-of-closed-islands/)                        |   Medium   |                         Matrix & DFS & Recursion                         |
 | 1375 | [Number of Times Binary String Is Prefix-Aligned](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) |   Medium   |                            Binary & Recursion                            |
+| 1143 |                      [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)                      |   Medium   |                             Tabulation & DP                              |
 | 1721 |                 [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)                 |   Medium   |                          Linked List & Pointers                          |
