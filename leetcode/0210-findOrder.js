@@ -25,7 +25,7 @@ const findOrder = (numCourses, prerequisites) => {
   const visiting = new Set();
   const visited = new Set();
 
-  const containsCycle = (vertex = 0) => {
+  const containsCycle = (vertex) => {
     visiting.add(vertex);
     const edges = graph.get(vertex);
 
@@ -48,8 +48,8 @@ const findOrder = (numCourses, prerequisites) => {
       : graph.get(vertex).push(edge);
   }
 
-  for (let i = 0; i < numCourses; i++) {
-    if (containsCycle(i)) return [];
+  for (let course = 0; course < numCourses; course++) {
+    if (containsCycle(course)) return [];
   }
 
   return [...visited];
