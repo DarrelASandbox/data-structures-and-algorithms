@@ -23,7 +23,7 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
 // Runtime: 142 ms	Memory: 46.4 MB
 // Time: O(N) & Space: O(1)
 const findAnagrams = (s, p) => {
-  const neededChars = {}; // {key: value} as {letter: count}
+  const neededChars = {}; // {key: value} as {char: count}
   const result = [];
   let uniqueChars = 0;
 

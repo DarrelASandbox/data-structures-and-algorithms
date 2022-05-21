@@ -25,10 +25,10 @@ Return the vertical order traversal of the binary tree.
 // Runtime: 79 ms	Memory: 44 MB
 // Time: O(N logN) & Space: O(N)
 const verticalTraversal = (root) => {
-  if (!root) return;
   const result = [];
 
   const dfs = (node, row, col) => {
+    if (!node) return;
     result.push([node.val, row, col]);
     if (node.left) dfs(node.left, row + 1, col - 1);
     if (node.right) dfs(node.right, row + 1, col + 1);
@@ -40,8 +40,8 @@ const verticalTraversal = (root) => {
     return val1 - val2;
   };
 
-  dfs(root, 0, 0); // Set coordinates
-  result.sort(comparator); // Sort by col, row & val
+  dfs(root, 0, 0); // set coordinates
+  result.sort(comparator); // sort by col, row & val
 
   const map = new Map(); // {key: value} as {col: [] of values}
   for (const [val, row, col] of result) {
@@ -75,9 +75,7 @@ const verticalTraversal2 = (root) => {
 
   for (i = minX; i <= maxX; i++) {
     let values = [];
-    let column = visited[i].sort((a, b) =>
-      a.y == b.y ? a.val - b.val : b.y - a.y
-    );
+    let column = visited[i].sort((a, b) => (a.y == b.y ? a.val - b.val : b.y - a.y));
     for (n of column) {
       values.push(n.val);
     }

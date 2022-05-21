@@ -25,7 +25,7 @@ Output: []
 // Runtime: 92 ms	Memory: 47.1 MB
 // Time: O(N logN)
 const mergeKLists = (lists) => {
-  // Merge the lists then sort
+  // Merge the lists, sort before creating the linked list
   const mergeList = [];
   lists.forEach((list) => {
     while (list) {
@@ -159,8 +159,7 @@ class PriorityQueue {
   _shiftDown() {
     let node = 0;
     while (
-      (this._left(node) < this.size() &&
-        this._lesser(this._left(node), node)) ||
+      (this._left(node) < this.size() && this._lesser(this._left(node), node)) ||
       (this._right(node) < this.size() && this._lesser(this._right(node), node))
     ) {
       let maxChild =

@@ -32,3 +32,6 @@ const isValidBST = (root, min = null, max = null) => {
 };
 
 // There are duplicates input so >= and <=
+
+// Testcase: [1,1] Expected: false
+// Testcase: [1,null,1] Expected: false

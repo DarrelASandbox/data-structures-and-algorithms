@@ -16,7 +16,7 @@ const swapNodes = (head, k) => {
   let node = head;
   let count = 1;
 
-  while (node.next !== null) {
+  while (node.next) {
     if (count < k) startPointer = startPointer.next;
     if (count >= k) endPointer = endPointer.next;
     node = node.next;

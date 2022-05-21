@@ -24,11 +24,15 @@ const validateStackSequences = (pushed, popped) => {
 
   for (const num of pushed) {
     stack.push(num);
+    // console.log(stack, 'num', num);
     while (stack.length && stack[stack.length - 1] === popped[i]) {
       stack.pop();
       i++;
+      // console.log('while: ', stack, 'popped', popped[i]);
     }
   }
 
   return stack.length === 0;
 };
+
+console.log(validateStackSequences([1, 2, 3, 4, 5], [4, 5, 3, 2, 1]));

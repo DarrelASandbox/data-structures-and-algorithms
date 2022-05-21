@@ -20,7 +20,7 @@ Output: [25]
 // Runtime: 71 ms	Memory: 44.8 MB
 // Time: O(N) & Space: O(1)
 const partitionLabels = (s) => {
-  const lastIndices = {}; // {key: value} as {letter: last index}
+  const lastIndices = {}; // {key: value} as {char: last index}
   const result = [];
 
   for (let i = 0; i < s.length; i++) {
