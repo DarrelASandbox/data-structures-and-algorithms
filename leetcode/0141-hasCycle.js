@@ -16,13 +16,13 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 // Time: O(N) & Space: O(1)
 const hasCycle = (head) => {
   if (!head) return false;
-  let pointer1 = head;
-  let pointer2 = head.next;
+  let slow = head;
+  let fast = head.next;
 
-  while (pointer2 && pointer2.next) {
-    if (pointer1 === pointer2) return true;
-    pointer1 = pointer1.next;
-    pointer2 = pointer2.next.next;
+  while (fast && fast.next) {
+    if (slow === fast) return true;
+    slow = slow.next;
+    fast = fast.next.next;
   }
 
   return false;

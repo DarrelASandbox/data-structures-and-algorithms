@@ -42,9 +42,7 @@ l   0 0 0 0   l   0 1 2 2   d   0 1 2 2
 // Bottom-up Dynamic Programming
 // Time: O(N * M)
 const longestCommonSubsequence = (text1, text2) => {
-  const dp = [...Array(text1.length + 1)].map(() =>
-    Array(text2.length + 1).fill(0)
-  );
+  const dp = [...Array(text1.length + 1)].map(() => Array(text2.length + 1).fill(0));
 
   for (let i = 1; i <= text1.length; i++) {
     for (let j = 1; j <= text2.length; j++) {

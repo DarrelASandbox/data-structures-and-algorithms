@@ -1,5 +1,7 @@
 /*
 https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
+https://stackoverflow.com/questions/34426458/javascript-difference-between-foreach-and-map
+From solution 1 (mergeKLists) line 43:  mergeList.map((val) => {...});
 
 You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 Merge all the linked-lists into one sorted linked-list and return it.
@@ -38,7 +40,7 @@ const mergeKLists = (lists) => {
 
   const head = new ListNode();
   let node = head;
-  mergeList.map((val) => {
+  mergeList.forEach((val) => {
     node.next = new ListNode(val);
     node = node.next;
   });
