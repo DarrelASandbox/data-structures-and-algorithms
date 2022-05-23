@@ -34,6 +34,7 @@
 |        Binary Search Tree         | BST  |
 |       Breadth First Search        | BFS  |
 |        Depth First Search         | DFS  |
+|        Doubly Linked List         | DLL  |
 | Floyd’s Cycle Detection Algorithm | FCDA |
 
 &nbsp;
@@ -54,6 +55,7 @@
 | 0116 |     [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)     |   Medium   |                       LOT, BFS, Queue & Recursion                        |
 | 0124 |                    [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)                    |    Hard    |                       Binary Tree, DFS & Recursion                       |
 | 0141 |                               [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                               |    Easy    |                          Linked List & Pointers                          |
+| 0146 |                                       [LRU Cache](https://leetcode.com/problems/lru-cache/)                                       |   Medium   |                          Design, DLL & Hashmap                           |
 | 0207 |                                 [Course Schedule](https://leetcode.com/problems/course-schedule/)                                 |   Medium   | Topological Sort, Graph, DFS, BFS, Recursion, Backtracking & Memoization |
 | 0210 |                              [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)                              |   Medium   |              Topological Sort, Graph, DFS, BFS & Recursion               |
 | 0232 |                    [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)                    |    Easy    |                          Design, Queue & Stack                           |
@@ -65,6 +67,7 @@
 | 0509 |                                [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)                                |    Easy    |                       Recursion, Memoization & DP                        |
 | 0560 |                           [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           |   Medium   |                                 Hashmap                                  |
 | 0647 |                          [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)                          |   Medium   |                     Pointers, Triangular Number & DP                     |
+| 0706 |                                  [Design HashMap](https://leetcode.com/problems/design-hashmap/)                                  |    Easy    |                             Design & Hashmap                             |
 | 0763 |                                [Partition Labels](https://leetcode.com/problems/partition-labels/)                                |   Medium   |                   Greedy Algorithm, Pointers & Hashmap                   |
 | 0781 |                               [Rabbits in Forest](https://leetcode.com/problems/rabbits-in-forest/)                               |   Medium   |                                 Hashmap                                  |
 | 0791 |                              [Custom Sort String](https://leetcode.com/problems/custom-sort-string/)                              |   Medium   |                              Sort & Hashmap                              |
