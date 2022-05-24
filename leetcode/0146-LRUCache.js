@@ -88,8 +88,8 @@ class LRUCache {
     if (this.map[key]) this.DLL.remove(this.map[key]);
     this.map[key] = this.DLL.push(key, value);
     if (this.DLL.length > this.capacity) {
-      const currKey = this.DLL.head.key;
-      delete this.map[currKey];
+      const firstKey = this.DLL.head.key;
+      delete this.map[firstKey];
       this.DLL.remove(this.DLL.head);
     }
   }

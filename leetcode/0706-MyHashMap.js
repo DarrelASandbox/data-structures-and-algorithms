@@ -32,7 +32,7 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 // Using Array
 class MyHashMap {
   constructor() {
-    this.data = new Array();
+    this.data = [];
   }
 
   put(key, value) {
@@ -40,7 +40,7 @@ class MyHashMap {
   }
 
   get(key) {
-    let value = this.data[key];
+    const value = this.data[key];
     return value !== undefined ? value : -1;
   }
 
