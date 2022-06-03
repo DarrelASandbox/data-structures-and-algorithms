@@ -2,7 +2,8 @@
 
 - The runtime reflected in the solutions is inaccurate. You are better off with asymptotic analysis (Big-O Notation).
 - Refer to the respective link to leetcode website to get the full problem information including constraint, diagram, etc.
-- Use [Pastebin](https://pastebin.com/) and compare.txt to check against the solution using VSCode compare tool.
+- Use [blank.page](https://blank.page/) and compare.txt to check against the solution using VSCode compare tool.
+  - May want to change the padding of the textarea if the width is too short.
 
 ## Patterns
 

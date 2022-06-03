@@ -20,7 +20,8 @@ const canCross = (stones) => {
   const dp = (k, idx) => {
     if (idx === stones.length - 1) return true; // reach last stone
     let key = k + ',' + idx;
-    if (memo.has(key)) return false; // key is added after looping all currIdx without return true
+    // key is added after looping all currIdx without return true
+    if (memo.has(key)) return false;
 
     // stones[currIdx] - stones[idx] = distance in k units from previous jump
     for (let currIdx = idx + 1; currIdx < stones.length; currIdx++) {
@@ -30,7 +31,8 @@ const canCross = (stones) => {
       if (stones[currIdx] - stones[idx] === k + 1 && dp(k + 1, currIdx)) return true;
     }
 
-    memo.add(key); // add key that cannot reach last stone
+    // add key that cannot reach last stone
+    memo.add(key);
     return false;
   };
 
