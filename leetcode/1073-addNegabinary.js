@@ -44,7 +44,8 @@ const addNegabinary = (arr1, arr2) => {
   const result = [];
   let carry = 0;
 
-  arr1.reverse(); // reverse arrays for easier indexing
+  // reverse arrays for easier indexing
+  arr1.reverse();
   arr2.reverse();
 
   for (let i = 0; i < maxLength; i++) {
@@ -54,7 +55,8 @@ const addNegabinary = (arr1, arr2) => {
     let remainder;
 
     if (sum < 0) {
-      sum += 2; // prevent pushing negative remainder into result
+      // prevent pushing negative remainder into result
+      sum += 2;
       carry = -1;
       remainder = sum % 2;
     } else {
@@ -66,8 +68,10 @@ const addNegabinary = (arr1, arr2) => {
     // console.log(i, remainder, carry, result);
   }
 
-  if (carry) result.push(1, 1); // When carry = -1 & sum is 0 + 0
-  while (result.length > 1 && result[result.length - 1] === 0) result.pop(); // Clear leading ZEROs
+  // When carry = -1 & sum is 0 + 0
+  if (carry) result.push(1, 1);
+  // Clear leading ZEROs
+  while (result.length > 1 && result[result.length - 1] === 0) result.pop();
   return result.reverse();
 };
 

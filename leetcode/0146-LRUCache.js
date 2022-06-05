@@ -72,7 +72,7 @@ class DoublyLinkedList {
 class LRUCache {
   constructor(capacity) {
     this.DLL = new DoublyLinkedList();
-    this.map = {};
+    this.map = {}; // {key: value} as {key: node}
     this.capacity = capacity;
   }
 

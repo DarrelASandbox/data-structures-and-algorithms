@@ -15,6 +15,8 @@ Explanation: There is no way to jump to the last stone as the gap between the 5t
 */
 
 // Runtime: 137 ms	Memory: 51.9 MB
+// Time: O(N^2) & Space: O(N^2)
+// each idx + k combo is only visited once, and idx and k has N complexity
 const canCross = (stones) => {
   const memo = new Set(); // {key: value} as {k: idx}
   const dp = (k, idx) => {
