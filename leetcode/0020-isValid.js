@@ -14,8 +14,8 @@ const isValid = (s) => {
   while (length !== s.length) {
     length = s.length;
     s = s.replace('()', '');
-    s = s.replace('{}', '');
     s = s.replace('[]', '');
+    s = s.replace('{}', '');
   }
 
   return s.length === 0;
@@ -30,6 +30,7 @@ const isValid2 = (s) => {
   };
 
   const stack = [];
+
   for (let i = 0; i < s.length; i++) {
     if (stack.length === 0) stack.push(s[i]);
     else {

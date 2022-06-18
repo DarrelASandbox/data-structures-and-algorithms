@@ -38,10 +38,16 @@ const nextGreaterElement = (n) => {
 
   const left = arr.slice(0, pivot + 1);
   const right = arr.slice(pivot + 1).reverse();
-  const res = Number(left.join('') + right.join(''));
-  return res > Math.pow(2, 31) - 1 ? -1 : res;
+  const result = Number(left.join('') + right.join(''));
+  // console.log(arr + '\n');
+  // console.log(left, right);
+  return result > Math.pow(2, 31) - 1 ? -1 : result;
 };
 
 // Math.pow(2, 31) - 1 = 2147483647
+// swapping to 421 is not the next greter element,
+// so we need to rearrange to ascending order for the digits 2 and 1.
+console.log(nextGreaterElement(241));
 console.log(nextGreaterElement(123456789));
 console.log(nextGreaterElement(2147418999));
+console.log(nextGreaterElement(241));
