@@ -23,12 +23,7 @@ const isValid = (s) => {
 
 // Runtime: 59 ms	Memory: 42.3 MB
 const isValid2 = (s) => {
-  const parentheses = {
-    '(': ')',
-    '[': ']',
-    '{': '}',
-  };
-
+  const parentheses = { '(': ')', '[': ']', '{': '}' };
   const stack = [];
 
   for (let i = 0; i < s.length; i++) {
