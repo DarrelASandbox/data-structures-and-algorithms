@@ -40,8 +40,7 @@ const connect = (root) => {
     let currNode = node;
     while (currNode) {
       currNode.left.next = currNode.right;
-      if (!currNode.next) break;
-      currNode.right.next = currNode.next.left;
+      currNode.right.next = currNode.next && currNode.next.left;
       currNode = currNode.next;
     }
     node = node.left;
