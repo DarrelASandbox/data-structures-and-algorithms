@@ -28,6 +28,7 @@ class Stack {
   }
 }
 
+/*
 class Stack {
   constructor() {
     this.data = [];
@@ -45,5 +46,6 @@ class Stack {
     return this.data[0];
   }
 }
+*/
 
 module.exports = Stack;

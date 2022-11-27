@@ -183,7 +183,7 @@
    - Can you understand it at a glance?
    - Can you use the result or method for some other problem?
    - Can you improve the performance of your solution?
-   - Can you think of other ways to refector?
+   - Can you think of other ways to refactor?
    - How have other people solved this problem?
 
 &nbsp;
@@ -203,7 +203,7 @@
   - This pattern uses objects or sets to collect values/ frequencies of values.
   - This can often avoid the need for nested loops or O(N<sup>2</sup>) operations with arrays/ strings.
 - <b>Multiple Pointers:</b>
-  - Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain conditiion.
+  - Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition.
   - Very efficient for solving problems with minimal space complexity as well.
 - <b>Sliding Window:</b>
   - This pattern involves creating a window which can either be an array or number from one position to another.
@@ -236,7 +236,7 @@ function outer(input) {
 ```
 
 - <b>Dynamic Programming</b>
-  - Overlapping Subproblems
+  - Overlapping Sub-problems
   - Optimal Substructure
   - Recursive vs Dynamic Programming
   - Recursion + Memoization
@@ -377,7 +377,7 @@ first.next.next.next = new SinglyLinkedListNode('You');
 - A data structure that contains a head, tail and length property.
 - Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
 - For removal, it will be the best at the start as compared to the end.
-- Singly linked list is strong in insertion and removal. Arrays are good for random acccess.
+- Singly linked list is strong in insertion and removal. Arrays are good for random access.
 
 ![reverse-singly-linked-list](0-slides/reverse-singly-linked-list.png)
 
@@ -429,7 +429,7 @@ tree.root.left.right = new Node(9);
 
 - <b>Binary Trees</b>
   - Decision Trees (true / false)
-  - Database Indicies
+  - Database Indices
   - Sorting Algorithms
 
 &nbsp;
@@ -453,7 +453,7 @@ tree.root.left.right = new Node(9);
   - BFS will take up a lot more space for queue is the tree is wide.
   - If it is a deep tree then DFS will take up more space.
   - InOrder: Used commonly with BST
-  - PreOrder: Can be used to 'export' a tree strcture so that it is easily reconstructed or copied.
+  - PreOrder: Can be used to 'export' a tree structure so that it is easily reconstructed or copied.
 
 &nbsp;
 
@@ -673,7 +673,7 @@ F: ['D', 'F'],
 ## Sorting Algorithms
 
 <table align="center">
-  <tr><th colspan='5'>Elementart Sorting Algorithms</th></tr>
+  <tr><th colspan='5'>Elementary Sorting Algorithms</th></tr>
   <tr>
     <th>Algorithm</th>
     <th>Time Complexity (Best)</th>
@@ -706,7 +706,7 @@ F: ['D', 'F'],
 
 &nbsp;
 
-- <b>Elementary Sorting Alogrithms</b>
+- <b>Elementary Sorting Algorithms</b>
   - <b>Bubble Sort:</b> A sorting algorithm where the largest values bubble up to the top!
   - <b>Selection Sort:</b> Similar to Bubble Sort, but instead of first placing large values into sorted position, it places small values into sorted position.
     - Selection Sort > Bubble Sort if you are in a situation whereby you want to <b>minimize the number of swaps.</b>

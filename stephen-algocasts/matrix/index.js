@@ -15,7 +15,7 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-const matrix1 = (n) => {
+const matrix = (n) => {
   const results = [];
   let num = 1;
   let startRow = 0;

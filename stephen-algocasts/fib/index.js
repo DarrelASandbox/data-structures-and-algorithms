@@ -67,7 +67,7 @@ const memoize = (fn) => {
 };
 
 const fib = memoize(fib5);
-console.log(fib(100));
+fib(100);
 
 /************************
  WRITE YOUR CODE BELOW!
