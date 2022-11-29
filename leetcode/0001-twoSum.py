@@ -6,9 +6,21 @@
 
 from typing import List
 
-# Runtime: 110 ms  Memory: 42.7 MB
-# for i, _ in enumerate(nums):
+# Runtime: 107 ms  Memory: 15.2 MB
+# Time: O(n) & Space: O(n)
 class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i, n in enumerate(nums):
+            m = target - n
+            if m in d:
+                return [d[m], i]
+            else:
+                d[n] = i
+
+
+# Runtime: 110 ms  Memory: 42.7 MB
+class Solution2:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         compliments = {}  # {key: value} as {compliment: index}
         for i in range(len(nums)):

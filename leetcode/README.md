@@ -5,6 +5,10 @@
 - Use [blank.page](https://blank.page/) and compare.txt to check against the solution using VSCode compare tool.
   - May want to change the padding of the textarea if the width is too short.
 
+## References
+
+- [Time complexity of accessing a Python dict](https://stackoverflow.com/questions/1963507/time-complexity-of-accessing-a-python-dict)
+
 ## Patterns
 
 1. Sliding Window
@@ -60,6 +64,7 @@
 | 0207 |                                 [Course Schedule](https://leetcode.com/problems/course-schedule/)                                 |   Medium   | Topological Sort, Graph, DFS, BFS, Recursion, Backtracking & Memoization |
 | 0210 |                              [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)                              |   Medium   |              Topological Sort, Graph, DFS, BFS & Recursion               |
 | 0232 |                    [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)                    |    Easy    |                          Design, Queue & Stack                           |
+| 0283 |                                     [Move Zeroes](https://leetcode.com/problems/move-zeroes/)                                     |    Easy    |                                 Pointers                                 |
 | 0287 |                       [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                       |   Medium   |                            Linked List & FCDA                            |
 | 0295 |                    [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)                    |    Hard    |                     Design, Binary Search & Min Heap                     |
 | 0316 |                        [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)                        |   Medium   |                    Greedy Algorithm & Monotonic Stack                    |
