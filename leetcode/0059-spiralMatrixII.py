@@ -1,10 +1,3 @@
-# https://leetcode.com/problems/spiral-matrix-ii/
-
-# Given a positive integer n, generate an n x n matrix filled with elements from 1 to n^2 in spiral order.
-
-# Input: n = 3
-# Output: [[1,2,3],[8,9,4],[7,6,5]]
-
 from typing import List
 
 # Runtime: 73 ms	Memory: 13.9 MB
@@ -47,4 +40,3 @@ class Solution:
 
 
 print(Solution().generateMatrix(3))
-

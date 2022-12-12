@@ -1,9 +1,3 @@
-# https://leetcode.com/problems/two-sum/
-
-# Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-# You may assume that each input would have exactly one solution, and you may not use the same element twice.
-# You can return the answer in any order.
-
 from typing import List
 
 # Runtime: 107 ms  Memory: 15.2 MB
@@ -33,4 +27,3 @@ class Solution2:
 
 print(Solution().twoSum(nums=[0, 4, 3, 0], target=0))
 print(Solution().twoSum(nums=[1, 3, 6, 4, 9], target=8))
-

@@ -1,30 +1,3 @@
-# https://leetcode.com/problems/word-search/
-
-# Given an m x n grid of characters board and a string word, return true if word exists in the grid.
-
-# The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
-
-# A B C E   A* B* C* E
-# S F C S   S  F  C* S
-# A D E E   A  D* E* E
-
-# Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
-# Output: true
-
-# A  B  C  E
-# S  F  C  S*
-# A  D  E* E*
-
-# Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
-# Output: true
-
-# A  B  C  E
-# S  F  C  S
-# A  D  E  E
-
-# Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
-# Output: false
-
 from typing import List
 
 # Runtime: 6716 ms	Memory: 14 MB
@@ -68,5 +41,13 @@ class Solution:
                     return True
 
 
-print(Solution().exist([["C", "A", "A"], ["A", "A", "A"], ["B", "C", "D"],], "AAB"))
-
+print(
+    Solution().exist(
+        [
+            ["C", "A", "A"],
+            ["A", "A", "A"],
+            ["B", "C", "D"],
+        ],
+        "AAB",
+    )
+)

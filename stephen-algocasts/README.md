@@ -22,7 +22,7 @@
 
 ## About The Project
 
-- The Coding Interview Bootcamp: Alogrithms + Data Structures
+- The Coding Interview Bootcamp: Algorithms + Data Structures
 - Ace your next Javascript coding interview by mastering data structures and algorithms.
 - Tutorial for
 - [Original Repo: AlgoCasts](https://github.com/StephenGrider/algocasts)
@@ -164,11 +164,7 @@ function fib(n) {
 function memoize(fn) {
   var cache = {};
   return function () {
-    for (
-      var _len = arguments.length, args = Array(_len), _key = 0;
-      _key < _len;
-      _key++
-    ) {
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
     if (cache[args]) return cache[args];
@@ -212,7 +208,7 @@ fib(5); // constant, we already calculated fib(5) so just look up that value.
 
 > <b>Alex: </b>Why is cache object not resetting?
 >
-> Shouldn't cache object be set to empty object every time we call fib() or memoize()? I can't undestand why isn't this happening.
+> Shouldn't cache object be set to empty object every time we call fib() or memoize()? I can't understand why isn't this happening.
 
 > <b>Stephen: </b>Each time we memoize a function we are creating a new cache object that is tied to the newly-memoized version of the function. We'd have to re-memoize the function to build a new cache.
 
