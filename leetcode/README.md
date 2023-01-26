@@ -1,10 +1,3 @@
-## Instructions
-
-- The runtime reflected in the solutions is inaccurate. You are better off with asymptotic analysis (Big-O Notation).
-- Refer to the respective link to leetcode website to get the full problem information including constraint, diagram, etc.
-- Use [blank.page](https://blank.page/) and compare.txt to check against the solution using VSCode compare tool.
-  - May want to change the padding of the textarea if the width is too short.
-
 ## References
 
 - [Time complexity of accessing a Python dict](https://stackoverflow.com/questions/1963507/time-complexity-of-accessing-a-python-dict)
@@ -46,17 +39,17 @@
 
 |  No  |                                                               Title                                                               | Difficulty |                                 Pattern                                  |
 | :--: | :-------------------------------------------------------------------------------------------------------------------------------: | :--------: | :----------------------------------------------------------------------: |
-| 0001 |                                         [Two Sum](https://leetcode.com/problems/two-sum/)                                         |    Easy    |                                 Hashmap                                  |
+| 0001 |                                         [Two Sum](https://leetcode.com/problems/two-sum/)                                         |    Easy    |                            Array & Hash Table                            |
 | 0002 |                                 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                 |   Medium   |                               Linked List                                |
 | 0015 |                                            [3Sum](https://leetcode.com/problems/3sum/)                                            |   Medium   |                                 Pointers                                 |
 | 0020 |                               [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                               |    Easy    |                                  Stack                                   |
 | 0023 |                            [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)                            |    Hard    |                    Linked List, Priority Queue & D&C                     |
-| 0026 |             [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)             |    Easy    |                                 Pointers                                 |
+| 0026 |             [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)             |    Easy    |                           Array & Two Pointers                           |
 | 0053 |                                [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)                                |    Easy    |                       Kadane’s Algorithm, D&C & DP                       |
 | 0059 |                                [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)                                |   Medium   |                                  Matrix                                  |
 | 0063 |                                 [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)                                 |   Medium   |                         Matrix, DP & Memoization                         |
 | 0079 |                                     [Word Search](https://leetcode.com/problems/word-search/)                                     |   Medium   |                Matrix, Recursion, DFS, BFS & Backtracking                |
-| 0080 |          [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)          |   Medium   |                                 Pointer                                  |
+| 0080 |          [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)          |   Medium   |                           Array & Two Pointers                           |
 | 0098 |                     [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)                     |   Medium   |                                   BST                                    |
 | 0102 |               [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)               |   Medium   |                       LOT, BFS, Queue & Recursion                        |
 | 0116 |     [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)     |   Medium   |                       LOT, BFS, Queue & Recursion                        |
@@ -66,7 +59,7 @@
 | 0207 |                                 [Course Schedule](https://leetcode.com/problems/course-schedule/)                                 |   Medium   | Topological Sort, Graph, DFS, BFS, Recursion, Backtracking & Memoization |
 | 0210 |                              [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)                              |   Medium   |              Topological Sort, Graph, DFS, BFS & Recursion               |
 | 0232 |                    [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)                    |    Easy    |                          Design, Queue & Stack                           |
-| 0283 |                                     [Move Zeroes](https://leetcode.com/problems/move-zeroes/)                                     |    Easy    |                                 Pointers                                 |
+| 0283 |                                     [Move Zeroes](https://leetcode.com/problems/move-zeroes/)                                     |    Easy    |                           Array & Two Pointers                           |
 | 0287 |                       [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                       |   Medium   |                            Linked List & FCDA                            |
 | 0295 |                    [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)                    |    Hard    |                     Design, Binary Search & Min Heap                     |
 | 0316 |                        [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)                        |   Medium   |                    Greedy Algorithm & Monotonic Stack                    |
@@ -84,6 +77,7 @@
 | 0791 |                              [Custom Sort String](https://leetcode.com/problems/custom-sort-string/)                              |   Medium   |                              Sort & Hashmap                              |
 | 0915 |         [Partition Array into Disjoint Intervals](https://leetcode.com/problems/partition-array-into-disjoint-intervals/)         |   Medium   |                                 Pointers                                 |
 | 0946 |                        [Validate Stack Sequences](https://leetcode.com/problems/validate-stack-sequences/)                        |   Medium   |                                  Stack                                   |
+| 0977 |                       [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)                       |    Easy    |                      Array, Two Pointers & Sorting                       |
 | 0987 |       [Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)       |    Hard    |                          VOT, DFS, & Recursion                           |
 | 1026 |    [Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/)    |   Medium   |                       Binary Tree, DFS & Recursion                       |
 | 1038 |          [Binary Search Tree to Greater Sum Tree](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/)          |   Medium   |                           BST, DFS & Recursion                           |
