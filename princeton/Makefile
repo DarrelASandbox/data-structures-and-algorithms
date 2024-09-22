@@ -25,3 +25,15 @@ binarySearch1:
 binarySearch2:
 	javac -cp $(CLASSPATH) c1/binarySearch/BinarySearch.java
 	java -cp c1:$(CLASSPATH) binarySearch.BinarySearch c1/binarySearch/largeAllowlist.txt < c1/binarySearch/largeText.txt | wc -l
+
+unionFind1:
+	javac -cp $(CLASSPATH) c1/unionFind/UF.java
+	java -cp c1:$(CLASSPATH) unionFind.UF < c1/unionFind/tinyUF.txt
+
+unionFind2:
+	javac -cp $(CLASSPATH) c1/unionFind/UF.java
+	java -cp c1:$(CLASSPATH) unionFind.UF < c1/unionFind/mediumUF.txt
+
+unionFind3:
+	javac -cp $(CLASSPATH) c1/unionFind/UF.java
+	java -cp c1:$(CLASSPATH) unionFind.UF < c1/unionFind/largeUF.txt
