@@ -30,17 +30,17 @@ BS2:
 	javac -cp $(CLASSPATH) c1/BinarySearch.java
 	java -cp c1:$(CLASSPATH) BinarySearch c1/txt/largeAllowlist.txt < c1/txt/largeText.txt | wc -l
 
-UF1:
-	javac -cp $(CLASSPATH) c1/UF.java
-	java -cp c1:$(CLASSPATH) UF < c1/txt/tinyUF.txt
+QF1:
+	javac -cp $(CLASSPATH) c1/QuickFindUF.java
+	java -cp c1:$(CLASSPATH) QuickFindUF < c1/txt/tinyUF.txt
 
-UF2:
-	javac -cp $(CLASSPATH) c1/UF.java
-	java -cp c1:$(CLASSPATH) UF < c1/txt/mediumUF.txt
+QF2:
+	javac -cp $(CLASSPATH) c1/QuickFindUF.java
+	java -cp c1:$(CLASSPATH) QuickFindUF < c1/txt/mediumUF.txt
 
-UF3:
-	javac -cp $(CLASSPATH) c1/UF.java
-	java -cp c1:$(CLASSPATH) UF < c1/txt/largeUF.txt
+QF3:
+	javac -cp $(CLASSPATH) c1/QuickFindUF.java
+	java -cp c1:$(CLASSPATH) QuickFindUF < c1/txt/largeUF.txt
 
 QU1:
 	javac -cp $(CLASSPATH) c1/QuickUnionUF.java
@@ -65,3 +65,15 @@ WQUF2:
 WQUF3:
 	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
 	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/largeUF.txt
+
+UF1:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/tinyUF.txt
+
+UF2:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/mediumUF.txt
+
+UF3:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/largeUF.txt
