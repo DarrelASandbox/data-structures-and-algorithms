@@ -1,6 +1,10 @@
 # Variables
 CLASSPATH = .:algs4.jar
 
+###############
+#	 Chapter 1  #
+###############
+
 helloWorld:
 	javac c1/assignments/HelloWord.java
 	java -cp c1 assignments.HelloWord
@@ -49,3 +53,15 @@ quickUnion2:
 quickUnion3:
 	javac -cp $(CLASSPATH) c1/quickUnion/QuickUnionUF.java
 	java -cp c1:$(CLASSPATH) quickUnion.QuickUnionUF < c1/txt/largeUF.txt
+
+weightedQuickUF1:
+	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
+	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/tinyUF.txt
+
+weightedQuickUF2:
+	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
+	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/mediumUF.txt
+
+weightedQuickUF3:
+	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
+	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/largeUF.txt
