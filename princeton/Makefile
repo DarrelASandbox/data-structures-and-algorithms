@@ -22,46 +22,46 @@ helloRandom2:
 	javac -cp $(CLASSPATH) c1/assignments/RandomWord.java
 	java -cp c1:$(CLASSPATH) assignments.RandomWord < c1/assignments/animals8.txt
 
-binarySearch1:
-	javac -cp $(CLASSPATH) c1/binarySearch/BinarySearch.java
-	java -cp c1:$(CLASSPATH) binarySearch.BinarySearch c1/binarySearch/tinyAllowlist.txt < c1/binarySearch/tinyText.txt
+BS1:
+	javac -cp $(CLASSPATH) c1/BinarySearch.java
+	java -cp c1:$(CLASSPATH) BinarySearch c1/txt/tinyAllowlist.txt < c1/txt/tinyText.txt
 
-binarySearch2:
-	javac -cp $(CLASSPATH) c1/binarySearch/BinarySearch.java
-	java -cp c1:$(CLASSPATH) binarySearch.BinarySearch c1/binarySearch/largeAllowlist.txt < c1/binarySearch/largeText.txt | wc -l
+BS2:
+	javac -cp $(CLASSPATH) c1/BinarySearch.java
+	java -cp c1:$(CLASSPATH) BinarySearch c1/txt/largeAllowlist.txt < c1/txt/largeText.txt | wc -l
 
-unionFind1:
-	javac -cp $(CLASSPATH) c1/unionFind/UF.java
-	java -cp c1:$(CLASSPATH) unionFind.UF < c1/txt/tinyUF.txt
+UF1:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/tinyUF.txt
 
-unionFind2:
-	javac -cp $(CLASSPATH) c1/unionFind/UF.java
-	java -cp c1:$(CLASSPATH) unionFind.UF < c1/txt/mediumUF.txt
+UF2:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/mediumUF.txt
 
-unionFind3:
-	javac -cp $(CLASSPATH) c1/unionFind/UF.java
-	java -cp c1:$(CLASSPATH) unionFind.UF < c1/txt/largeUF.txt
+UF3:
+	javac -cp $(CLASSPATH) c1/UF.java
+	java -cp c1:$(CLASSPATH) UF < c1/txt/largeUF.txt
 
-quickUnion1:
-	javac -cp $(CLASSPATH) c1/quickUnion/QuickUnionUF.java
-	java -cp c1:$(CLASSPATH) quickUnion.QuickUnionUF < c1/txt/tinyUF.txt
+QU1:
+	javac -cp $(CLASSPATH) c1/QuickUnionUF.java
+	java -cp c1:$(CLASSPATH) QuickUnionUF < c1/txt/tinyUF.txt
 
-quickUnion2:
-	javac -cp $(CLASSPATH) c1/quickUnion/QuickUnionUF.java
-	java -cp c1:$(CLASSPATH) quickUnion.QuickUnionUF < c1/txt/mediumUF.txt
+QU2:
+	javac -cp $(CLASSPATH) c1/QuickUnionUF.java
+	java -cp c1:$(CLASSPATH) QuickUnionUF < c1/txt/mediumUF.txt
 
-quickUnion3:
-	javac -cp $(CLASSPATH) c1/quickUnion/QuickUnionUF.java
-	java -cp c1:$(CLASSPATH) quickUnion.QuickUnionUF < c1/txt/largeUF.txt
+QU3:
+	javac -cp $(CLASSPATH) c1/QuickUnionUF.java
+	java -cp c1:$(CLASSPATH) QuickUnionUF < c1/txt/largeUF.txt
 
-weightedQuickUF1:
+WQUF1:
 	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
 	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/tinyUF.txt
 
-weightedQuickUF2:
+WQUF2:
 	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
 	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/mediumUF.txt
 
-weightedQuickUF3:
+WQUF3:
 	javac -cp $(CLASSPATH) c1/WeightedQuickUnionUF.java
 	java -cp c1:$(CLASSPATH) WeightedQuickUnionUF < c1/txt/largeUF.txt

@@ -1,4 +1,3 @@
-package binarySearch;
 
 /******************************************************************************
  *  Compilation:  javac BinarySearch.java

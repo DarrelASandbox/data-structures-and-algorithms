@@ -1,3 +1,4 @@
+
 /******************************************************************************
  *  Compilation:  javac QuickUnionUF.java
  *  Execution:  java QuickUnionUF < input.txt
@@ -9,8 +10,6 @@
  *  Quick-union algorithm.
  *
  ******************************************************************************/
-
-package quickUnion;
 
 import edu.princeton.cs.algs4.QuickFindUF;
 import edu.princeton.cs.algs4.StdIn;

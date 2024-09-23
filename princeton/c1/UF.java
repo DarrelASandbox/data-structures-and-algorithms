@@ -21,7 +21,6 @@
  *
  ******************************************************************************/
 
-package unionFind;
 
 import edu.princeton.cs.algs4.QuickFindUF;
 import edu.princeton.cs.algs4.QuickUnionUF;
