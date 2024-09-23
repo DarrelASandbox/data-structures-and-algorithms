@@ -10,11 +10,17 @@
     - [4. **Parallelism and Pipelining**](#4-parallelism-and-pipelining)
   - [Summary of Derivation](#summary-of-derivation)
 - [Union-Find](#union-find)
+- [Summary](#summary)
   - [Dynamic Connectivity](#dynamic-connectivity)
   - [Quick Find (eager approach)](#quick-find-eager-approach)
-    - [Explanation of Operations:](#explanation-of-operations)
-    - [Detailed Breakdown of Steps:](#detailed-breakdown-of-steps)
+    - [Illustration 1](#illustration-1)
+    - [Illustration 2](#illustration-2)
+      - [Explanation of Operations:](#explanation-of-operations)
+      - [Detailed Breakdown of Steps:](#detailed-breakdown-of-steps)
     - [Quadratic algorithms do not scale](#quadratic-algorithms-do-not-scale)
+  - [Quick Union (lazy approach)](#quick-union-lazy-approach)
+    - [Illustration 1](#illustration-1-1)
+    - [Illustration 2](#illustration-2-1)
 
 # About The Project
 
@@ -35,7 +41,7 @@
       <li>Data Abstraction</li>
       <li>Stacks and Queues</li>
       <li>Analysis of Algorithms</li>
-      <li>Case Study: Union-Find</li>
+      <li>Illustration: Union-Find</li>
     </ol>
   </li>
 </ol>
@@ -117,6 +123,20 @@ The derivation of modern computational capability, particularly the approximatio
   - Find a way to address the problem.
   - Iterate until satisfied.
 
+# Summary
+
+|  algorithm  | initialize | union | find |
+| :---------: | :--------: | :---: | :--: |
+| quick-find  |     N      |   N   |  1   |
+| quick-union |     N      |   N   |  N   |
+
+- **Quick-find defect**.
+  - Union too expensive (N array accesses).
+  - Trees are flat, but too expensive to keep them flat.
+- **Quick-union defect**.
+  - Trees can get tall.
+  - Find too expensive (could be N array accesses).
+
 ## Dynamic Connectivity
 
 > How many connected components result after performing the following sequence of union operations on a set of 10 items?
@@ -143,13 +163,13 @@ The derivation of modern computational capability, particularly the approximatio
 
 - It takes N<sup>2</sup> array accesses to process a sequence of N union commands on N objects
 
-| algorithm  | initialize | union | find |
-| :--------: | :--------: | :---: | :--: |
-| quick-find |     N      |   N   |  1   |
-
 - **Data Structure**
   - Integer array id[] of size N.
   - Interpretation: p and q are connected iff (if and only if) they have the same id.
+- **Find**: Check if p and q have the same id
+- **Union**: To merge components containing p and q, change all entries whose id equals id[p] to id[q].
+
+### Illustration 1
 
 ```
        0   1   2   3   4   5   6   7   8   9
@@ -167,6 +187,8 @@ id[] | 0 | 1 | 1 | 8 | 8 | 0 | 0 | 1 | 8 | 8 |
   - 0, 5 & 6
   - 1, 2 & 7
   - 3, 4, 8 & 9
+
+### Illustration 2
 
 ```
        0   1   2   3   4   5   6   7   8   9
@@ -237,13 +259,13 @@ id[] | 1 | 1 | 1 | 8 | 8 | 1 | 1 | 1 | 8 | 8 |
 
 The Quick-Find algorithm represents a way to solve the dynamic connectivity problem by using an array `id[]` where the index represents the object, and the value at each index represents the component identifier (or root) that object belongs to.
 
-### Explanation of Operations:
+#### Explanation of Operations:
 
 1. **Initial state**: Each element is its own component. Hence, `id[]` values start as equal to their index.
 2. **Union operations**: `union(p, q)` connects elements `p` and `q` by making the value of `id[p]` equal to `id[q]`. To achieve this, every index in the `id[]` array that currently has the value `id[p]` must be changed to `id[q]`.
 3. **Connected operations**: `connected(p, q)` checks whether `p` and `q` are in the same component by comparing `id[p]` and `id[q]`. If they are equal, `p` and `q` are connected.
 
-### Detailed Breakdown of Steps:
+#### Detailed Breakdown of Steps:
 
 1. **union(4, 3)**:
    - Make `id[4]` equal to `id[3]`, which results in `id[4] = 3`. Change `id[4]` to `id[3]`, making both `3` and `4` part of the same component.
@@ -314,3 +336,93 @@ $$
 
 > What is the maximum number of id[]id[] array entries that can change (from one value to a different value) during one call to union when using the quick-find data structure on nn elements?
 > In the worst case, all of the entries except id[q]id[q] are changed from id[p]id[p] to id[q]id[q].
+
+## Quick Union (lazy approach)
+
+- **Data structure**.
+  - Integer array id[] of length N.
+  - Interpretation: id[i] is parent of i.
+  - Root of i is id[id[id[...id[i]...]]].
+- **Find**: Check if p and q have the same root.
+- **Union**: To merge components containing p and q, set the id of p's root to the id of q's root.
+
+### Illustration 1
+
+Suppose that in a quick-union data structure on 10 elements that the id[] array is
+
+```
+   i    0   1   2   3   4   5   6   7   8   9
+      |---|---|---|---|---|---|---|---|---|---|
+id[i] | 0 | 9 | 6 | 5 | 4 | 2 | 6 | 1 | 0 | 5 |
+      |---|---|---|---|---|---|---|---|---|---|
+```
+
+- `i = 0` → `id[0] = 0`: Element 0 is its own root.
+- `i = 1` → `id[1] = 9`: Element 1's parent is 9.
+- `i = 2` → `id[2] = 6`: Element 2's parent is 6.
+- `i = 3` → `id[3] = 5`: Element 3's parent is 5.
+- `i = 4` → `id[4] = 4`: Element 4 is its own root.
+- `i = 5` → `id[5] = 2`: Element 5's parent is 2.
+- `i = 6` → `id[6] = 6`: Element 6 is its own root.
+- `i = 7` → `id[7] = 1`: Element 7's parent is 1.
+- `i = 8` → `id[8] = 0`: Element 8's parent is 0.
+- `i = 9` → `id[9] = 5`: Element 9's parent is 5.
+
+- The root of 3 is 6:   3→5→2→6.
+- The root of 7 is 6:   7→1→9→5→2→6.
+
+### Illustration 2
+
+```
+   i    0   1   2   3   4   5   6   7   8   9
+
+union(4,3)
+   i    0   1   2   3 → 4   5   6   7   8   9
+
+union(3,8)
+   i    0   1   2   5   6   7   8 → 3 → 4   9
+
+union(6,5)
+   i    0   1   2   5 → 6   7   8 → 3 → 4   9
+
+union(9,4)
+   i    0   1   2   5 → 6   7   8 → 3 → 4
+                                  → 9
+
+union(2,1)
+   i    0   1 → 2   5 → 6   7   8 → 3 → 4
+                                  → 9
+
+connected(8,9) True
+   i    0   1 → 2   5 → 6   7   8 → 3 → 4
+                                  → 9
+
+connected(5,4) False
+   i    0   1 → 2   5 → 6   7   8 → 3 → 4
+                                  → 9
+
+union(5,0)
+   i    0 → 5 → 6   1 → 2   7   8 → 3 → 4
+                                  → 9
+
+union(7,2)
+   i    0 → 5 → 6   1 → 2   8 → 3 → 4
+                      → 7     → 9
+
+union(6,1)
+   i    1 → 2           8 → 3 → 4
+          → 7             → 9
+          → 0 → 5 → 6
+
+union(7,3)
+   i    8 → 3 → 4
+          → 9
+          → 1 → 2
+              → 7
+              → 0 → 5 → 6
+
+       0   1   2   3   4   5   6   7   8   9
+     |---|---|---|---|---|---|---|---|---|---|
+id[] | 1 | 8 | 1 | 8 | 3 | 0 | 5 | 1 | 8 | 8 |
+     |---|---|---|---|---|---|---|---|---|---|
+```
