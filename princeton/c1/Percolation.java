@@ -1,169 +1,125 @@
-import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
-  private boolean[][] grid;
-  private WeightedQuickUnionUF wqfGrid;
-  private WeightedQuickUnionUF wqfFull;
-  private int gridSize;
-  private int gridSquared;
-  private int virtualTop;
-  private int virtualBottom;
+
+  private static final int TOP = 0;
+  private final boolean[][] opened;
+  private final int size;
+  private final int bottom;
   private int openSites;
+  private final WeightedQuickUnionUF qf;
+
+  /**
+   * Creating an N by N grid
+   * Matrix Dimension => size x size
+   * Virtual Box => 2
+   * Initial Matrix => Blocked
+   **/
 
   public Percolation(int n) {
-    if (n <= 0)
-      throw new IllegalArgumentException("N must be > 0");
-    gridSize = n;
-    gridSquared = n * n;
-    grid = new boolean[gridSize][gridSize];
-    wqfGrid = new WeightedQuickUnionUF(gridSquared + 2); // includes virtual top bottom
-    wqfFull = new WeightedQuickUnionUF(gridSquared + 1); // includes virtual top
-    virtualBottom = gridSquared + 1;
-    virtualTop = gridSquared;
+    if (n <= 0) {
+      throw new IllegalArgumentException();
+    }
+    size = n;
+    bottom = size * size + 1;
+    qf = new WeightedQuickUnionUF(size * size + 2);
+    opened = new boolean[size][size];
     openSites = 0;
-
   }
 
-  // Test: open site (row, col) if it is not open already
+  /**
+   * Open box (row i and col j) if not opened
+   * Box Opened if value => true
+   * Box closed if value => false
+   */
+
   public void open(int row, int col) {
-    validateSite(row, col);
+    checkException(row, col);
+    opened[row - 1][col - 1] = true; // Open the box
+    ++openSites; // Incrementing the number of open sites
 
-    int shiftRow = row - 1;
-    int shiftCol = col - 1;
-    int flatIndex = flattenGrid(row, col) - 1;
-
-    // If already open, stop
-    if (isOpen(row, col)) {
-      return;
+    // Edge Case => If any of the top row boxes are opened => Union(box, top)
+    if (row == 1) {
+      qf.union(getQuickFindIndex(row, col), TOP);
     }
 
-    // Open Site
-
-    grid[shiftRow][shiftCol] = true;
-    openSites++;
-
-    if (row == 1) { // Top Row
-      wqfGrid.union(virtualTop, flatIndex);
-      wqfFull.union(virtualTop, flatIndex);
+    // Edge Case => If any of the bottom row boxes are opened => Union(box, bottom)
+    if (row == size) {
+      qf.union(getQuickFindIndex(row, col), bottom);
     }
 
-    if (row == gridSize) { // Bottom Row
-      wqfGrid.union(virtualBottom, flatIndex);
+    // If any of the boxes in the middle rows (except top and bottom) are opened then check for neighbouring unions
+    if (row > 1 && isOpen(row - 1, col)) {
+      qf.union(getQuickFindIndex(row, col), getQuickFindIndex(row - 1, col));
     }
 
-    // Check and Open Left
-    if (isOnGrid(row, col - 1) && isOpen(row, col - 1)) {
-      wqfGrid.union(flatIndex, flattenGrid(row, col - 1) - 1);
-      wqfFull.union(flatIndex, flattenGrid(row, col - 1) - 1);
+    if (row < size && isOpen(row + 1, col)) {
+      qf.union(getQuickFindIndex(row, col), getQuickFindIndex(row + 1, col));
     }
 
-    // Check and Open Right
-    if (isOnGrid(row, col + 1) && isOpen(row, col + 1)) {
-      wqfGrid.union(flatIndex, flattenGrid(row, col + 1) - 1);
-      wqfFull.union(flatIndex, flattenGrid(row, col + 1) - 1);
+    if (col > 1 && isOpen(row, col - 1)) {
+      qf.union(getQuickFindIndex(row, col), getQuickFindIndex(row, col - 1));
     }
 
-    // Check and Open Up
-    if (isOnGrid(row - 1, col) && isOpen(row - 1, col)) {
-      wqfGrid.union(flatIndex, flattenGrid(row - 1, col) - 1);
-      wqfFull.union(flatIndex, flattenGrid(row - 1, col) - 1);
+    if (col < size && isOpen(row, col + 1)) {
+      qf.union(getQuickFindIndex(row, col), getQuickFindIndex(row, col + 1));
     }
-
-    // Check and Open Down
-    if (isOnGrid(row + 1, col) && isOpen(row + 1, col)) {
-      wqfGrid.union(flatIndex, flattenGrid(row + 1, col) - 1);
-      wqfFull.union(flatIndex, flattenGrid(row + 1, col) - 1);
-    }
-
-    // debug
-    // runTests();
   }
 
-  // Test: is site (row, col) open?
+  /**
+   * Checks Illegal Argument Exception
+   */
+
+  private void checkException(int row, int col) {
+    if (row <= 0 || row > size || col <= 0 || col > size) {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  /**
+   * Check if the selected box is open of now
+   * Return Type => Boolean
+   */
+
   public boolean isOpen(int row, int col) {
-    validateSite(row, col);
-    return grid[row - 1][col - 1];
-
+    checkException(row, col);
+    return opened[row - 1][col - 1];
   }
 
-  // Test: is site (row, col) full?
-  public boolean isFull(int row, int col) {
-    validateSite(row, col);
-    return wqfFull.find(virtualTop) == wqfFull.find(flattenGrid(row, col) - 1);
-  }
-
-  // Test: number of open sites
+  /**
+   * Returns the total number of open sites
+   */
   public int numberOfOpenSites() {
     return openSites;
   }
 
-  // Test: does the system percolate?
+  /**
+   * If the whole area is full
+   * Return Type => Boolean
+   */
+
+  public boolean isFull(int row, int col) {
+    if ((row > 0 && row <= size) && (col > 0 && col <= size)) {
+      return qf.find(TOP) == qf.find(getQuickFindIndex(row, col));
+    } else
+      throw new IllegalArgumentException();
+  }
+
+  /**
+   * Retrieves the index of the box from the matrix
+   */
+
+  private int getQuickFindIndex(int row, int col) {
+    return size * (row - 1) + col;
+  }
+
+  /**
+   * Does the system percolates
+   * Return Type => Boolean
+   */
+
   public boolean percolates() {
-    return wqfFull.find(virtualTop) == wqfFull.find(virtualBottom);
+    return qf.find(TOP) == qf.find(bottom); // If top is connected to bottom, then system percolates
   }
 
-  // test client
-  public static void main(String[] args) {
-    int size = Integer.parseInt(args[0]);
-
-    Percolation percolation = new Percolation(size);
-    int argCount = args.length;
-    for (int i = 1; argCount >= 2; i += 2) {
-      int row = Integer.parseInt(args[i]);
-      int col = Integer.parseInt(args[i + 1]);
-      StdOut.printf("Adding row: %d  col: %d %n", row, col);
-      percolation.open(row, col);
-      if (percolation.percolates()) {
-        StdOut.printf("%nThe System percolates %n");
-      }
-      argCount -= 2;
-    }
-    if (!percolation.percolates()) {
-      StdOut.print("Does not percolate %n");
-    }
-
-  }
-
-  private int flattenGrid(int row, int col) {
-    return gridSize * (row - 1) + col;
-  }
-
-  private void validateSite(int row, int col) {
-    if (!isOnGrid(row, col)) {
-      throw new IndexOutOfBoundsException("Index is out of bounds");
-    }
-  }
-
-  private boolean isOnGrid(int row, int col) {
-    int shiftRow = row - 1;
-    int shiftCol = col - 1;
-    return (shiftRow >= 0 && shiftCol >= 0 && shiftRow < gridSize && shiftCol < gridSize);
-  }
-
-  /* private void runTests() {
-      for (int row = 1; row <= gridSize; row++) {
-          for (int col = 1; col <= gridSize; col++) {
-              if (isOpen(row, col)) {
-                  StdOut.printf("Row: %d Col: %d is Open %n", row, col);
-              } else {
-                  StdOut.printf("Row: %d Col: %d is not Open %n", row, col);
-              }
-              if (isFull(row, col)) {
-                  StdOut.printf("Row: %d Col: %d is Full %n", row, col);
-              } else {
-                  StdOut.printf("Row: %d Col: %d is not Full %n", row, col);
-              }
-  
-          }
-      }
-  
-      StdOut.printf("Sites Open: %d %n", numberOfOpenSites());
-      if (percolates()) {
-          StdOut.printf("Percolates %n");
-      } else {
-          StdOut.printf("Does not Percolate %n");
-      }
-  }
-  */
 }
