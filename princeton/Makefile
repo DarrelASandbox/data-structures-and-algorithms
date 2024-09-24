@@ -77,3 +77,19 @@ UF2:
 UF3:
 	javac -cp $(CLASSPATH) c1/UF.java
 	java -cp c1:$(CLASSPATH) UF < c1/txt/largeUF.txt
+
+p1:
+	javac -cp $(CLASSPATH) c1/Percolation.java
+	java -cp c1:$(CLASSPATH) Percolation < c1/assignments/data-percolation/input8.txt
+
+ps1:
+	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
+	java -cp c1:$(CLASSPATH) PercolationStats 200 100
+
+ps2:
+	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
+	java -cp c1:$(CLASSPATH) PercolationStats 2 10000
+
+ps3:
+	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
+	java -cp c1:$(CLASSPATH) PercolationStats 2 100000
