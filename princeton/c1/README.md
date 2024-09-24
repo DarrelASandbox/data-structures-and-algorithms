@@ -469,6 +469,9 @@ id[] | 6 | 2 | 6 | 4 | 6 | 6 | 6 | 2 | 4 | 4 |
 ## Union-find applications
 
 - Percolation.
+  - When opening one new site in the percolation simulation, how many times is union()union() called?
+  - 0, 1, 2, 3, or 4
+  - It is called for each neighboring site that is already open. There are 4 possible neighbors, but some of them may not already be open.
 - Games (Go, Hex).
 - Dynamic connectivity.
 - Least common ancestor.
