@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -92,28 +90,28 @@ public class Percolation {
   }
 
   // test client (optional)
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter grid size n: ");
-    int n = scanner.nextInt();
-    Percolation perc = new Percolation(n);
+  // public static void main(String[] args) {
+  //   Scanner scanner = new Scanner(System.in);
+  //   System.out.print("Enter grid size n: ");
+  //   int n = scanner.nextInt();
+  //   Percolation perc = new Percolation(n);
 
-    System.out.println("Enter row and column pairs to open sites (type 'done' to finish):");
-    while (scanner.hasNext()) {
-      if (scanner.hasNextInt()) {
-        int row = scanner.nextInt();
-        int col = scanner.nextInt();
-        perc.open(row, col);
-      } else {
-        String input = scanner.next();
-        if (input.equalsIgnoreCase("done")) {
-          break;
-        }
-      }
-    }
+  //   System.out.println("Enter row and column pairs to open sites (type 'done' to finish):");
+  //   while (scanner.hasNext()) {
+  //     if (scanner.hasNextInt()) {
+  //       int row = scanner.nextInt();
+  //       int col = scanner.nextInt();
+  //       perc.open(row, col);
+  //     } else {
+  //       String input = scanner.next();
+  //       if (input.equalsIgnoreCase("done")) {
+  //         break;
+  //       }
+  //     }
+  //   }
 
-    System.out.println("Percolates: " + perc.percolates()); // Check if the system percolates
-    System.out.println("Number of open sites: " + perc.numberOfOpenSites());
-    scanner.close();
-  }
+  //   System.out.println("Percolates: " + perc.percolates()); // Check if the system percolates
+  //   System.out.println("Number of open sites: " + perc.numberOfOpenSites());
+  //   scanner.close();
+  // }
 }
