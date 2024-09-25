@@ -10,21 +10,22 @@ CLASSPATH = .:algs4.jar
 #########################
 
 helloWorld:
-	javac c1/assignments/HelloWord.java
-	java -cp c1 assignments.HelloWord
+	javac c1/HelloWord.java
+	java -cp c1 HelloWord
 
+# make helloGoodbye ARGS="Chick Duck"
 helloGoodbye:
-	javac c1/assignments/HelloGoodbye.java
-	java -cp c1 assignments.HelloGoodbye $(ARGS)
+	javac c1/HelloGoodbye.java
+	java -cp c1 HelloGoodbye $(ARGS)
 
 # Ctrl+D on MacOS to signal end of input
 helloRandom1:
-	javac -cp $(CLASSPATH) c1/assignments/RandomWord.java
-	java -cp c1:$(CLASSPATH) assignments.RandomWord
+	javac -cp $(CLASSPATH) c1/RandomWord.java
+	java -cp c1:$(CLASSPATH) RandomWord
 
 helloRandom2:
-	javac -cp $(CLASSPATH) c1/assignments/RandomWord.java
-	java -cp c1:$(CLASSPATH) assignments.RandomWord < c1/assignments/animals8.txt
+	javac -cp $(CLASSPATH) c1/RandomWord.java
+	java -cp c1:$(CLASSPATH) RandomWord < c1/txt/animals8.txt
 
 p1:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationTest.java

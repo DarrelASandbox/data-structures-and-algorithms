@@ -1,4 +1,3 @@
-package assignments;
 
 /* 
 Knuth's method refers to a variety of techniques developed by Donald Knuth, one of the most influential figures in computer science. One specific technique commonly referred to as "Knuth's method" is related to **random sampling without replacement**. Here’s a detailed explanation of that specific method, often called **Knuth’s Algorithm S**:
