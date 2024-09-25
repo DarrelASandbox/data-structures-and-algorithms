@@ -32,6 +32,7 @@
 1. [hello](https://coursera.cs.princeton.edu/algs4/assignments/hello/specification.php)
 2. [percolation](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)
    1. [percolation.zip](https://www.cs.princeton.edu/courses/archive/fall24/cos226/assignments/percolation/percolation.zip)
+   2. [Sayan Mondal - Percolation Assignment Explanation](https://www.youtube.com/watch?v=gaBWn0gGM4Q)
 
 # Course Overview
 
