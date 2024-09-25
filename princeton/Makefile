@@ -27,8 +27,8 @@ helloRandom2:
 	java -cp c1:$(CLASSPATH) assignments.RandomWord < c1/assignments/animals8.txt
 
 p1:
-	javac -cp $(CLASSPATH) c1/Percolation.java
-	java -cp c1:$(CLASSPATH) Percolation < c1/assignments/data-percolation/input8.txt
+	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationTest.java
+	java -cp c1:$(CLASSPATH) PercolationTest < c1/txt/data-percolation/eagle25.txt
 
 ps1:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
