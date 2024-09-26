@@ -27,19 +27,19 @@ helloRandom2:
 	javac -cp $(CLASSPATH) c1/RandomWord.java
 	java -cp c1:$(CLASSPATH) RandomWord < c1/txt/animals8.txt
 
-p1:
+P1:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationTest.java
 	java -cp c1:$(CLASSPATH) PercolationTest < c1/txt/data-percolation/eagle25.txt
 
-ps1:
+PS1:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
 	java -cp c1:$(CLASSPATH) PercolationStats 200 100
 
-ps2:
+PS2:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
 	java -cp c1:$(CLASSPATH) PercolationStats 2 10000
 
-ps3:
+PS3:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
 	java -cp c1:$(CLASSPATH) PercolationStats 2 100000
 
@@ -54,6 +54,54 @@ BS1:
 BS2:
 	javac -cp $(CLASSPATH) c1/BinarySearch.java
 	java -cp c1:$(CLASSPATH) BinarySearch c1/txt/largeAllowlist.txt < c1/txt/largeText.txt | wc -l
+
+#########################
+#	     Chapter 1.3      #
+#########################
+
+S1:
+	javac -cp $(CLASSPATH) c1/Stack.java
+	java -cp c1:$(CLASSPATH) Stack < c1/txt/tobe.txt
+
+S2:
+	javac -cp $(CLASSPATH) c1/LinkedStack.java
+	java -cp c1:$(CLASSPATH) LinkedStack < c1/txt/tobe.txt
+
+S3:
+	javac -cp $(CLASSPATH) c1/ResizingArrayStack.java
+	java -cp c1:$(CLASSPATH) ResizingArrayStack < c1/txt/tobe.txt
+
+S4:
+	javac -cp $(CLASSPATH) c1/FixedCapacityStack.java
+	java -cp c1:$(CLASSPATH) FixedCapacityStack 5 < c1/txt/tobe.txt
+
+S5:
+	javac -cp $(CLASSPATH) c1/FixedCapacityStackOfStrings.java
+	java -cp c1:$(CLASSPATH) FixedCapacityStackOfStrings 5 < c1/txt/tobe.txt
+
+Q1:
+	javac -cp $(CLASSPATH) c1/Queue.java
+	java -cp c1:$(CLASSPATH) Queue < c1/txt/tobe.txt
+
+Q2:
+	javac -cp $(CLASSPATH) c1/LinkedQueue.java
+	java -cp c1:$(CLASSPATH) LinkedQueue < c1/txt/tobe.txt
+
+Q3:
+	javac -cp $(CLASSPATH) c1/ResizingArrayQueue.java
+	java -cp c1:$(CLASSPATH) ResizingArrayQueue < c1/txt/tobe.txt
+
+I1:
+	javac -cp $(CLASSPATH) c1/Bag.java
+	java -cp c1:$(CLASSPATH) Bag < c1/txt/tobe.txt
+
+I2:
+	javac -cp $(CLASSPATH) c1/LinkedBag.java
+	java -cp c1:$(CLASSPATH) LinkedBag < c1/txt/tobe.txt
+
+D1:
+	javac -cp $(CLASSPATH) c1/Evaluate.java c1/Stack.java
+	java -cp c1:$(CLASSPATH) Evaluate
 
 #########################
 #	     Chapter 1.4      #
