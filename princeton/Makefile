@@ -10,8 +10,8 @@ CLASSPATH = .:algs4.jar
 #########################
 
 helloWorld:
-	javac c1/HelloWord.java
-	java -cp c1 HelloWord
+	javac c1/HelloWorld.java
+	java -cp c1 HelloWorld
 
 # make helloGoodbye ARGS="Chick Duck"
 helloGoodbye:
