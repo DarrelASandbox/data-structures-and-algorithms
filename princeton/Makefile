@@ -43,6 +43,22 @@ PS3:
 	javac -cp $(CLASSPATH) c1/Percolation.java c1/PercolationStats.java
 	java -cp c1:$(CLASSPATH) PercolationStats 2 100000
 
+deque:
+	javac -cp $(CLASSPATH) c1/Deque.java
+	java -cp c1:$(CLASSPATH) Deque
+
+RQ:
+	javac -cp $(CLASSPATH) c1/RandomizedQueue.java
+	java -cp c1:$(CLASSPATH) RandomizedQueue
+
+PM1:
+	javac -cp $(CLASSPATH) c1/Permutation.java c1/RandomizedQueue.java
+	java -cp c1:$(CLASSPATH) Permutation 3 < c1/txt/data-queues/distinct.txt
+
+PM2:
+	javac -cp $(CLASSPATH) c1/Permutation.java c1/RandomizedQueue.java
+	java -cp c1:$(CLASSPATH) Permutation 8 < c1/txt/data-queues/duplicates.txt
+
 #########################
 #	     Chapter 1.1      #
 #########################
