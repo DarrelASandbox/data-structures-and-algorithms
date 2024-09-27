@@ -1,17 +1,17 @@
 
 /******************************************************************************
  	1.	Node<Item> Class: A helper class that represents each node in the doubly linked list.
-	2.	Core Operations:
+  2.	Core Operations:
 	    •	addFirst, addLast: Add new nodes at the front and back, respectively.
 	    •	removeFirst, removeLast: Remove nodes from the front and back, respectively, while handling empty cases.
-	3.	DequeIterator:
+  3.	DequeIterator:
 	    •	Implements Iterator<Item> to allow easy iteration from front to back.
 	    •	The remove() method throws UnsupportedOperationException as required.
-	4.	Edge Case Handling:
+  4.	Edge Case Handling:
 	    •	Null checks in addFirst and addLast.
 	    •	Checks for empty deque in removeFirst and removeLast.
 	    •	Iteration stops when next() has no more elements, and remove() is not supported.
-	5.	Unit Testing:
+  5.	Unit Testing:
 	  •	Verifies the functionality and handling of edge cases, printing outputs to confirm correctness.
 
   Performance

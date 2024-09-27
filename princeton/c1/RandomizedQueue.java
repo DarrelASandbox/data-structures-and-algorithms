@@ -2,20 +2,20 @@
 /******************************************************************************
   Explanation
 
-	1.	Resizing Array:
+  1.	Resizing Array:
 	  •	The RandomizedQueue uses a dynamic resizing array (queue) to manage items. This ensures that enqueue and dequeue are performed in amortized constant time.
 	  •	The resize method doubles or halves the array size when necessary to keep operations efficient and prevent excessive memory usage.
-	2.	Randomized Behavior:
+  2.	Randomized Behavior:
 	  •	The dequeue method selects a random item, swaps it with the last item, and removes it. This ensures that the item removed is chosen uniformly at random.
 	  •	The sample method picks a random index without removing the item.
-	3.	Iterator:
+  3.	Iterator:
 	  •	The iterator creates a copy of the current items, shuffles them, and iterates over the shuffled copy. This ensures that each iterator operates independently and maintains random order.
 	  •	The shuffle method uses the Fisher-Yates shuffle algorithm for unbiased random shuffling.
-	4.	Edge Case Handling:
+  4.	Edge Case Handling:
 	  •	IllegalArgumentException is thrown when trying to enqueue a null item.
 	  •	NoSuchElementException is thrown when calling sample or dequeue on an empty queue.
 	  •	UnsupportedOperationException is thrown for the remove method of the iterator.
-	5.	Unit Testing:
+  5.	Unit Testing:
 	  •	The main method tests all public methods and verifies expected behavior, including edge cases.
 
   Performance
@@ -27,22 +27,20 @@
 	    •	Resizing array ensures efficient space usage.
 	    •	Memory overhead for the iterator due to copying and shuffling is linear.
   ******************************************************************************/
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Random;
+
+import edu.princeton.cs.algs4.StdRandom;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
 
   private Item[] queue;
   private int size;
-  private Random random;
 
   // construct an empty randomized queue
   public RandomizedQueue() {
     queue = (Item[]) new Object[2]; // initialize with a small array
     size = 0;
-    random = new Random();
   }
 
   // is the randomized queue empty?
@@ -68,7 +66,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
   public Item dequeue() {
     if (isEmpty())
       throw new NoSuchElementException("Randomized queue is empty.");
-    int randomIndex = random.nextInt(size);
+    int randomIndex = StdRandom.uniformInt(size); // use StdRandom to get a random index
     Item item = queue[randomIndex];
     queue[randomIndex] = queue[size - 1]; // swap with the last item
     queue[size - 1] = null; // avoid loitering
@@ -82,7 +80,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
   public Item sample() {
     if (isEmpty())
       throw new NoSuchElementException("Randomized queue is empty.");
-    int randomIndex = random.nextInt(size);
+    int randomIndex = StdRandom.uniformInt(size); // use StdRandom to get a random index
     return queue[randomIndex];
   }
 
@@ -109,7 +107,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
       for (int i = 0; i < size; i++) {
         randomOrder[i] = queue[i];
       }
-      shuffle(randomOrder); // shuffle the array for random order
+      StdRandom.shuffle(randomOrder); // use StdRandom to shuffle the array
       current = 0;
     }
 
@@ -125,16 +123,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public void remove() {
       throw new UnsupportedOperationException();
-    }
-
-    // Fisher-Yates shuffle algorithm
-    private void shuffle(Item[] array) {
-      for (int i = array.length - 1; i > 0; i--) {
-        int index = random.nextInt(i + 1);
-        Item temp = array[i];
-        array[i] = array[index];
-        array[index] = temp;
-      }
     }
   }
 
