@@ -203,3 +203,38 @@ UF3:
 	javac -cp $(CLASSPATH) c1/UF.java
 	java -cp c1:$(CLASSPATH) UF < c1/txt/largeUF.txt
 
+#########################
+#	     Chapter 2.1      #
+#########################
+
+SS1:
+	javac -cp $(CLASSPATH) c2/Selection.java
+	java -cp c2:$(CLASSPATH) Selection < c2/txt/tiny.txt
+
+SS2:
+	javac -cp $(CLASSPATH) c2/Selection.java
+	java -cp c2:$(CLASSPATH) Selection < c2/txt/words3.txt
+
+IS1:
+	javac -cp $(CLASSPATH) c2/Insertion.java
+	java -cp c2:$(CLASSPATH) Insertion < c2/txt/tiny.txt
+
+IS2:
+	javac -cp $(CLASSPATH) c2/Insertion.java
+	java -cp c2:$(CLASSPATH) Insertion < c2/txt/words3.txt
+
+IS3:
+	javac -cp $(CLASSPATH) c2/InsertionX.java
+	java -cp c2:$(CLASSPATH) Insertion < c2/txt/tiny.txt
+
+IS4:
+	javac -cp $(CLASSPATH) c2/InsertionX.java
+	java -cp c2:$(CLASSPATH) Insertion < c2/txt/words3.txt
+
+SHS1:
+	javac -cp $(CLASSPATH) c2/Shell.java
+	java -cp c2:$(CLASSPATH) Shell < c2/txt/tiny.txt
+
+SHS2:
+	javac -cp $(CLASSPATH) c2/Shell.java
+	java -cp c2:$(CLASSPATH) Shell < c2/txt/words3.txt
