@@ -274,3 +274,7 @@ MS8:
 MS9:
 	javac -cp $(CLASSPATH) c2/MergeBU.java
 	java -cp c2:$(CLASSPATH) MergeBU < c2/txt/words3.txt
+
+INV1:
+	javac -cp $(CLASSPATH) c2/Inversions.java
+	java -cp c2:$(CLASSPATH) Inversions < c2/txt/input.txt
