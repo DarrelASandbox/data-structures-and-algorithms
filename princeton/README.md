@@ -18,3 +18,4 @@
    1. [percolation.zip](https://www.cs.princeton.edu/courses/archive/fall24/cos226/assignments/percolation/percolation.zip)
    2. [Sayan Mondal - Percolation Assignment Explanation](https://www.youtube.com/watch?v=gaBWn0gGM4Q)
 3. [queues](https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php)
+4. [collinear](https://coursera.cs.princeton.edu/algs4/assignments/collinear/specification.php)
