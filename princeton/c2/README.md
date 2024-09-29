@@ -4,6 +4,7 @@
   - [Shellsort](#shellsort)
   - [Shuffling](#shuffling)
   - [Convex Hull](#convex-hull)
+- [Mergesort](#mergesort)
 
 # Elementary Sort
 
@@ -73,7 +74,7 @@ public class Temperature implements Comparable<Temperature> {
   - linear
   - linearithmic
   - Ans: 4
-    - Since successive increment values of hh differ by at least a factor of 3, there are $\sim log⁡3n$ increment values. For each increment value $h$, the array is already $h$-sorted so it will make $\sim n$ compares.
+    - Since successive increment values of hh differ by at least a factor of 3, there are $\sim log_{3}n$ increment values. For each increment value $h$, the array is already $h$-sorted so it will make $\sim n$ compares.
 
 ## Shuffling
 
@@ -94,3 +95,18 @@ public class Temperature implements Comparable<Temperature> {
   - linearithmic
   - Ans: 3
     - If the input points are points on the circumference of a circle (or vertices of a regular $n$-gon), then all $n$ points will be on the convex hull.
+
+# Mergesort
+
+- How many compares does mergesort—the pure version without any optimizations—make to sort an input array that is already sorted?
+  - constant
+  - logarithmic
+  - linear
+  - linearithmic
+  - Ans: 4
+    - It makes $\sim \frac{1}{2}n\log_{2}n$ compares, which is the best case for mergesort. We note that the optimized version that checks whether $a[mid]≤a[mid+1]a[mid]≤a[mid+1]$ requires only $n−1$ compares.
+- How many passes (over the input array) does bottom-up mergesort make in the worst case?
+  - constant
+  - logarithmic
+  - linear
+  - linearithmic

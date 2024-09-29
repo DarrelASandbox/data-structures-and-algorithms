@@ -238,3 +238,39 @@ SHS1:
 SHS2:
 	javac -cp $(CLASSPATH) c2/Shell.java
 	java -cp c2:$(CLASSPATH) Shell < c2/txt/words3.txt
+
+MS1:
+	javac -cp $(CLASSPATH) c2/Merge.java
+	java -cp c2:$(CLASSPATH) Merge < c2/txt/tiny.txt
+
+MS2:
+	javac -cp $(CLASSPATH) c2/Merge.java
+	java -cp c2:$(CLASSPATH) Merge < c2/txt/words3.txt
+
+MS3:
+	javac -cp $(CLASSPATH) c2/MergeX.java
+	java -cp c2:$(CLASSPATH) MergeX < c2/txt/tiny.txt
+
+MS4:
+	javac -cp $(CLASSPATH) c2/MergeX.java
+	java -cp c2:$(CLASSPATH) MergeX < c2/txt/words3.txt
+
+MS5:
+	javac -cp $(CLASSPATH) c2/MergeX.java
+	java -cp c2:$(CLASSPATH) MergeX < c2/txt/tiny.txt
+
+MS6:
+	javac -cp $(CLASSPATH) c2/MergeX.java
+	java -cp c2:$(CLASSPATH) MergeX < c2/txt/words3.txt
+
+MS7:
+	javac -cp $(CLASSPATH) c2/MergeBars.java
+	java -cp c2:$(CLASSPATH) MergeBars 1000 96
+
+MS8:
+	javac -cp $(CLASSPATH) c2/MergeBU.java
+	java -cp c2:$(CLASSPATH) MergeBU < c2/txt/tiny.txt
+
+MS9:
+	javac -cp $(CLASSPATH) c2/MergeBU.java
+	java -cp c2:$(CLASSPATH) MergeBU < c2/txt/words3.txt
