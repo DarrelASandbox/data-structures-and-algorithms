@@ -278,3 +278,35 @@ MS9:
 INV1:
 	javac -cp $(CLASSPATH) c2/Inversions.java
 	java -cp c2:$(CLASSPATH) Inversions < c2/txt/input.txt
+
+QS1:
+	javac -cp $(CLASSPATH) c2/Quick.java
+	java -cp c2:$(CLASSPATH) Quick < c2/txt/tiny.txt
+
+QS2:
+	javac -cp $(CLASSPATH) c2/Quick.java
+	java -cp c2:$(CLASSPATH) Quick < c2/txt/words3.txt
+
+QS3:
+	javac -cp $(CLASSPATH) c2/Quick3way.java
+	java -cp c2:$(CLASSPATH) Quick3way < c2/txt/tiny.txt
+
+QS4:
+	javac -cp $(CLASSPATH) c2/Quick3way.java
+	java -cp c2:$(CLASSPATH) Quick3way < c2/txt/words3.txt
+
+QS5:
+	javac -cp $(CLASSPATH) c2/QuickX.java
+	java -cp c2:$(CLASSPATH) QuickX < c2/txt/tiny.txt
+
+QS6:
+	javac -cp $(CLASSPATH) c2/QuickX.java
+	java -cp c2:$(CLASSPATH) QuickX < c2/txt/words3.txt
+
+QS7:
+	javac -cp $(CLASSPATH) c2/QuickBentleyMcIlroy.java
+	java -cp c2:$(CLASSPATH) QuickBentleyMcIlroy < c2/txt/tiny.txt
+
+QS8:
+	javac -cp $(CLASSPATH) c2/QuickBentleyMcIlroy.java
+	java -cp c2:$(CLASSPATH) QuickBentleyMcIlroy < c2/txt/words3.txt

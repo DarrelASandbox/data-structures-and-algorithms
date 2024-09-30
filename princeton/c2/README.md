@@ -5,15 +5,19 @@
   - [Shuffling](#shuffling)
   - [Convex Hull](#convex-hull)
 - [Mergesort](#mergesort)
-- [Bottom-Up Mergesort](#bottom-up-mergesort)
-- [Sorting Complexity](#sorting-complexity)
-  - [Upper Bound and Lower Bound](#upper-bound-and-lower-bound)
-- [Comparators](#comparators)
-- [Stability](#stability)
-  - [Goal: Removing Duplicates in an Array of Points](#goal-removing-duplicates-in-an-array-of-points)
-    - [Understanding "Usefulness" in Terms of Stability and Ordering](#understanding-usefulness-in-terms-of-stability-and-ordering)
-    - [Analyzing Each Approach](#analyzing-each-approach)
-    - [Summary](#summary)
+  - [Bottom-Up Mergesort](#bottom-up-mergesort)
+  - [Sorting Complexity](#sorting-complexity)
+    - [Upper Bound and Lower Bound](#upper-bound-and-lower-bound)
+  - [Comparators](#comparators)
+  - [Stability](#stability)
+    - [Goal: Removing Duplicates in an Array of Points](#goal-removing-duplicates-in-an-array-of-points)
+      - [Understanding "Usefulness" in Terms of Stability and Ordering](#understanding-usefulness-in-terms-of-stability-and-ordering)
+      - [Analyzing Each Approach](#analyzing-each-approach)
+      - [Summary](#summary)
+- [Quicksort](#quicksort)
+  - [Selection](#selection)
+  - [Duplicate Keys](#duplicate-keys)
+  - [System Sorts](#system-sorts)
 
 # Elementary Sort
 
@@ -115,7 +119,7 @@ public class Temperature implements Comparable<Temperature> {
   - Ans: 4
     - It makes $\sim \frac{1}{2}n\log_{2}n$ compares, which is the best case for mergesort. We note that the optimized version that checks whether $a[mid]≤a[mid+1]a[mid]≤a[mid+1]$ requires only $n−1$ compares.
 
-# Bottom-Up Mergesort
+## Bottom-Up Mergesort
 
 - How many passes (over the input array) does bottom-up mergesort make in the worst case?
   - constant
@@ -123,7 +127,7 @@ public class Temperature implements Comparable<Temperature> {
   - linear
   - linearithmic
 
-# Sorting Complexity
+## Sorting Complexity
 
 - Under which of the following scenarios does the $Nlg⁡N$ lower bound for sorting apply? Assume that the keys are accessed only through the compareTo() method unless otherwise specified.
   - five distinct keys
@@ -132,7 +136,7 @@ public class Temperature implements Comparable<Temperature> {
   - keys are strings and accessed via charAt() instead of compareTo()
   - Ans: 2
 
-## Upper Bound and Lower Bound
+### Upper Bound and Lower Bound
 
 To determine the **upper bound** and **lower bound** of an algorithm, you can follow these steps:
 
@@ -174,7 +178,7 @@ To determine the **upper bound** and **lower bound** of an algorithm, you can fo
   - **Optimality**:
     - Since the upper and lower bounds match at $\Theta(\log N)$, binary search is optimal for searching a sorted array.
 
-# Comparators
+## Comparators
 
 - Which of the following is a compelling reason to implement the Comparator interface instead of the ComparableComparable interface in Java?
   - easier to use `Comparator` with `Arrays.sort()`
@@ -183,7 +187,7 @@ To determine the **upper bound** and **lower bound** of an algorithm, you can fo
   - All of the above
   - Ans: 2
 
-# Stability
+## Stability
 
 - Given an array of points, which of the following approaches would be least useful for removing duplicate points? Assume the point data type has the following three orders:
   - A natural order that compares by $x$-coordinate and breaks ties by $y$-coordinate.
@@ -198,18 +202,18 @@ To determine the **upper bound** and **lower bound** of an algorithm, you can fo
 
 Great question! Let's break down what "least useful" means in this context, as well as how to evaluate the usefulness of each approach.
 
-## Goal: Removing Duplicates in an Array of Points
+### Goal: Removing Duplicates in an Array of Points
 
 The task is to remove duplicate points from an array. For duplicates to be easily identified and removed, the array needs to be sorted in a way that places identical points next to each other. The "usefulness" of each sorting approach depends on how effectively it groups duplicates together.
 
-### Understanding "Usefulness" in Terms of Stability and Ordering
+#### Understanding "Usefulness" in Terms of Stability and Ordering
 
 - **Stability**: A stable sorting algorithm keeps the relative order of elements that are considered equal. This is important for duplicate detection because, if we sort the points by one property and then sort by another, we want points with identical values to stay together in a predictable order.
 - **Ordering**: Since we’re dealing with points in two dimensions ($x$- and $y$-coordinates), our goal is to find an order that brings identical points (same $x$ and $y$ values) next to each other in the sorted list.
 
 An approach is "useful" if it **keeps all duplicates adjacent** in the final sorted order, making it easy to detect and remove duplicates. An approach is "least useful" if it **fails to consistently place duplicates next to each other** due to the lack of stability or improper ordering.
 
-### Analyzing Each Approach
+#### Analyzing Each Approach
 
 1. **Quicksort by Natural Order**:
 
@@ -234,8 +238,57 @@ An approach is "useful" if it **keeps all duplicates adjacent** in the final sor
    - Sorting by $y$-coordinate next will maintain the relative order of points with the same $x$-coordinate, ensuring that duplicates end up adjacent.
    - **Usefulness**: High. This approach reliably places duplicates next to each other, making it easy to identify and remove them.
 
-### Summary
+#### Summary
 
 The "least useful" approach is the one that fails to group duplicates consistently due to **instability** or improper ordering.
 
 **Answer**: Approach **3** is the least useful because it uses mergesort (stable) for the $x$-coordinate but then quicksort (unstable) for the $y$-coordinate, which can scatter duplicates, defeating the purpose of sorting for duplicate removal.
+
+# Quicksort
+
+- What is the expected running time of randomized quicksort to sort an array of $n$ distinct keys when the array is already sorted?
+  - linear
+  - linearithmic
+  - quadratic
+  - exponential
+  - Ans: 2
+    - The expected number of compares is $\sim 2nlnn$.
+    - Without shuffling, the worst case will be quadratic
+
+## Selection
+
+- What is the expected running time to find the median of an array of $n$ distinct keys using randomized quickselect?
+  - constant
+  - linear
+  - linearithmic
+  - quadratic
+  - Ans: 2
+    - This is the main advantage of quickselect over quicksort—the expected number of compares is linear instead of linearithmic.
+
+## Duplicate Keys
+
+- Using 3-way partitioning with quicksort is most effective when the input array has which of the following properties?
+  - all items distinct
+  - a few distinct items
+  - items in strictly increasing order
+  - items in strictly decreasing order
+  - Ans: 2
+    - The goal of 3-way partitioning is to speed up quicksort in the presence of duplicate keys.
+
+## System Sorts
+
+- Why does `Arrays.sort()` in Java use mergesort instead of quicksort when sorting reference types?
+  - stability
+  - $nlog⁡n$ guaranteed performance
+  - both A and B
+  - neither A nor B
+  - Ans: 2
+    - The Java API for `Arrays.sort()` for reference types requires that it is stable and guarantees `nlog⁡n` performance. Neither of these are properties of standard quicksort.
+    - Quicksort uses less memory and is faster in practice on typical inputs (and is typically used by `Arrays.sort()` when sorting primitive types, where stability is not relevant).
+- Why does `Arrays.sort()` in Java use quicksort instead of mergesort when sorting primitive types?
+  - uses less memory on typical inputs
+  - faster on typical inputs
+  - both A and B
+  - neither A nor B
+  - Ans: 3
+    - Quicksort is in-place and is typically the fastest general-purpose sorting algorithm in practice.
