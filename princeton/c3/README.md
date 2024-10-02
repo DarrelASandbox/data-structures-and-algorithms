@@ -16,6 +16,11 @@
   - [KD Trees](#kd-trees)
   - [Interval Search Trees](#interval-search-trees)
   - [Rectangle Intersection](#rectangle-intersection)
+- [Hash Tables](#hash-tables)
+  - [Hash Functions](#hash-functions)
+  - [Separate Chaining](#separate-chaining)
+  - [Linear Probing](#linear-probing)
+  - [Context](#context)
 
 # Symbol Tables
 
@@ -232,3 +237,45 @@ rotate E left      E         X
 - $n\log⁡n$ + $R$
 - $n\log⁡N$ + $R\log⁡n$
 - Ans: 4
+
+# Hash Tables
+
+## Hash Functions
+
+- Which of the following is not a property of Java's `hashCode()` for the `String` data type?
+- can return a negative integer
+- can take time proportional to the length of the string to compute
+- a string and its reverse will have the same `hashCode()` value
+- two strings with different `hashCode()` values are different strings
+- Ans: 3
+  - There is no reason to expect this. For example, the strings `ab` and `ba` have different hash codes.
+
+## Separate Chaining
+
+- What is the average running time of a random search miss in a separate-chaining hash table? Assume that your hash function satisfies the uniform hashing assumption and that there are $m=n/8$ chains.
+- constant
+- logarithmic
+- linear
+- linearithmic
+- Ans: 1
+  - This is one of the key properties of a separate-chaining hash table.
+
+## Linear Probing
+
+- What is the average running time of delete in a linear-probing hash table? Assume that your hash function satisfies the uniform hashing assumption and that the hash table is at most 50% full.
+- constant
+- logarithmic
+- linear
+- linearithmic
+- Ans: 1
+  - The easiest way to implement delete is to find and remove the key–value pair and then to reinsert all of the key–value pairs in the same cluster that appear after the deleted key–value pair. If the hash table doesn't get too full, the expected number of key–value pairs to reinsert will be a small constant.
+  - An alternative is to flag the deleted linear-probing table entry so that it is skipped over during a search but is used for an insertion. If there are too many flagged entries, create a new hash table and rehash all key–value pairs.
+
+## Context
+
+- Which is the main reason to use a hash table instead of a red–black BST?
+- supports more operations efficiently
+- better worst-case performance guarantee
+- better performance in practice on typical inputs
+- implementation included in Java libraries
+- Ans: 3

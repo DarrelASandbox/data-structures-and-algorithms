@@ -414,3 +414,15 @@ UBST1:
 RBST1:
 	javac -cp $(CLASSPATH) c3/RedBlackBST.java
 	java -cp c3:$(CLASSPATH) RedBlackBST < c3/txt/tinyST.txt
+
+#########################
+#	     Chapter 3.4      #
+#########################
+
+SCHST1:
+	javac -cp $(CLASSPATH) c3/SequentialSearchST.java c3/SeparateChainingHashST.java
+	java -cp c3:$(CLASSPATH) SeparateChainingHashST < c3/txt/tinyST.txt
+
+LPHST1:
+	javac -cp $(CLASSPATH) c3/LinearProbingHashST.java
+	java -cp c3:$(CLASSPATH) LinearProbingHashST < c3/txt/tinyST.txt
