@@ -310,3 +310,27 @@ QS7:
 QS8:
 	javac -cp $(CLASSPATH) c2/QuickBentleyMcIlroy.java
 	java -cp c2:$(CLASSPATH) QuickBentleyMcIlroy < c2/txt/words3.txt
+
+PQ1:
+	javac -cp $(CLASSPATH) c2/MinPQ.java
+	java -cp c2:$(CLASSPATH) MinPQ < c2/txt/tinyPQ.txt
+
+PQ2:
+	javac -cp $(CLASSPATH) c2/MaxPQ.java
+	java -cp c2:$(CLASSPATH) MaxPQ < c2/txt/tinyPQ.txt
+
+PQ3:
+	javac -cp $(CLASSPATH) c2/IndexMinPQ.java
+	java -cp c2:$(CLASSPATH) IndexMinPQ
+
+PQ4:
+	javac -cp $(CLASSPATH) c2/IndexMaxPQ.java
+	java -cp c2:$(CLASSPATH) IndexMaxPQ
+
+PQ5:
+	javac -cp $(CLASSPATH) c2/Heap.java
+	java -cp c2:$(CLASSPATH) Heap < c2/txt/tiny.txt
+
+PQ6:
+	javac -cp $(CLASSPATH) c2/Heap.java
+	java -cp c2:$(CLASSPATH) Heap < c2/txt/words3.txt

@@ -18,6 +18,12 @@
   - [Selection](#selection)
   - [Duplicate Keys](#duplicate-keys)
   - [System Sorts](#system-sorts)
+- [Priority Queues](#priority-queues)
+  - [API and Elementary Implementations](#api-and-elementary-implementations)
+  - [Binary Heap](#binary-heap)
+    - [Max-Heap](#max-heap)
+  - [Heapsort](#heapsort)
+  - [Event-Driven Simulation](#event-driven-simulation)
 
 # Elementary Sort
 
@@ -292,3 +298,74 @@ The "least useful" approach is the one that fails to group duplicates consistent
   - neither A nor B
   - Ans: 3
     - Quicksort is in-place and is typically the fastest general-purpose sorting algorithm in practice.
+
+# Priority Queues
+
+## API and Elementary Implementations
+
+- What is the expected number of array accesses and compares, respectively, to insert a random key into an ordered-array implementation of a priority queue?
+  - logarithmic and logarithmic
+  - logarithmic and linear
+  - linear and logarithmic
+  - linear and linear
+  - Ans: 3
+    - We can use binary search to find the insertion point using a logarithmic number of compares. On average, the key to be inserted must be placed in the middle of the array—to keep the array in order, we must shift over all larger keys.
+
+## Binary Heap
+
+- Which of the following arrays does not represent a max-oriented binary heap?
+  - 19 18 17 16 15 14 13 12 11 10
+  - 10 10 10 10 10 10 10 10 10 10
+  - 34 30 29 27 25 17 16 19 22 24
+  - 30 27 23 17 16 15 13 14 18 11
+  - Ans: 4
+    - In the corresponding binary tree, 17 is a parent of 18, which violates the heap-order property.
+
+### Max-Heap
+
+Suppose that an array $a[]$ is a max-heap that contains the distinct integer keys $1,2,…,N1,2,…,N$ with $N≥7$. The key $N$ must be in $a[1]$ and the key $N−1$ must be in either $a[2]$ or $a[3]$. Where must the key $N−2$ be?
+
+- 2 or 3
+- 4, 5, 6, or 7
+- 2, 3, 4, 5, 6, or 7
+- 1, 2, 3, 4, 5, 6, or 7
+- Ans: 3
+
+To determine where the key $N-2$ must be in a max-heap, we analyze the properties of a max-heap:
+
+1. **Max-Heap Property**: In a max-heap, for any node at index $i$, the value at $i$ must be greater than or equal to the values at its child nodes at indices $2i$ and $2i+1$.
+2. **Array Representation**: A max-heap with $N$ elements is typically represented as an array $a[]$, where:
+   - $a[1]$ is the root (maximum element).
+   - $a[2]$ and $a[3]$ are the children of $a[1]$.
+   - $a[4]$ and $a[5]$ are the children of $a[2]$.
+   - $a[6]$ and $a[7]$ are the children of $a[3]$.
+
+- Given
+  - $a[1] = N$, as $N$ is the largest key.
+  - $N-1$ must be in $a[2]$ or $a[3]$, as these are the children of the root.
+- Placement of $N-2$:
+  - $N-2$ cannot be at $a[1]$, as $a[1]$ already holds $N$.
+  - $N-2$ cannot be at $a[2]$ or $a[3]$ if these already contain $N-1$, as $N-2 < N-1$ and the max-heap property must be maintained.
+  - $N-2$ must be placed in one of the children of $a[2]$ or $a[3]$, which are $a[4], a[5], a[6],$ or $a[7]$, or it could replace $N-1$ in $a[2]$ or $a[3]$, provided the heap property is satisfied.
+  - The key $N-2$ can be in $a[2], a[3], a[4], a[5], a[6],$ or $a[7]$.
+
+## Heapsort
+
+- How many compares does bottom-up (sink-based) heap construction perform in the worst case when sorting an array of $n$ keys?
+  - constant
+  - logarithmic
+  - linear
+  - linearithmic
+  - Ans:
+    - No heap construction algorithm can guarantee to make a sublinear number of compares in the worst case because each of the nn keys must be involved in at least one compare.
+    - As stated in lecture, the bottom-up version of heapsort makes $\sim 2n$ compares in the worst case.
+
+## Event-Driven Simulation
+
+- How many priority-queue operations are performed for each collision in the worst case?
+  - constant
+  - logarithmic
+  - linear
+  - quadratic
+  - Ans: 3
+    - In the worst case, each of the two colliding particle might be predicted to collide with each of the other particles (and two walls). In practice, the number of priority queue operations will be much much smaller.
