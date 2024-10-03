@@ -10,6 +10,12 @@
   - [2-3 Search Trees](#2-3-search-trees)
   - [Red-black BSTs](#red-black-bsts)
   - [B-Trees](#b-trees)
+- [Geometric Applications of BSTs](#geometric-applications-of-bsts)
+  - [1D Range Search](#1d-range-search)
+  - [Line Segment Intersection](#line-segment-intersection)
+  - [KD Trees](#kd-trees)
+  - [Interval Search Trees](#interval-search-trees)
+  - [Rectangle Intersection](#rectangle-intersection)
 
 # Symbol Tables
 
@@ -161,3 +167,68 @@ rotate E left      E         X
 - $\log⁡_{2}n$
 - Ans: 3
   - This is the worst-case height, when every node has $m/2$ children.
+
+# Geometric Applications of BSTs
+
+## 1D Range Search
+
+- What is the worst-case number of compares to perform a 1d range count if the keys are stored in an ordered array and the 1d range search is performed efficiently?
+- constant
+- logarithmic
+- linear
+- linearithmic
+- Ans: 2
+  - It can be done with two binary searches: one for the left endpoint and one for the right endpoint.
+
+## Line Segment Intersection
+
+- What is the worst-case running time of the sweep-line algorithm to find all $R$ intersections among $n$ orthogonal line segments?
+- constant + $R$
+- $\log⁡n$ + $R$
+- $n\log⁡n$ + $R$
+- $n\log⁡n$ + $R\log⁡n$
+- Ans: 3
+
+## KD Trees
+
+- Suppose that the point 11 is inserted into the kd-tree below. Where is the new node inserted?
+- Right child of 6
+- Left child of 7
+- Left child of 10
+- Right child of 10
+- Ans: 4
+  - Starting from the root, here are the sequence of nodes examined:
+    - Point 11 is to the right of point 1, so we take the right branch of 1.
+    - Point 11 is below point 2, so we take the left branch of 2.
+    - Point 11 is to the right of point 7, so we take the right branch of 7.
+    - Point 11 is above point 10, so we take the right branch of 10.
+  - We've reached a null link, so this is where we insert 11.
+
+![kdtree-insert](/princeton/c3/assets/kdtree-insert.jpg)
+
+- When performing nearest neighbor search, we organize the recursive method so that when there are two possible subtrees to go down, we always choose the subtree that is on the same side of the splitting line as the query point as the first subtree to explore. What is the main reason for doing so?
+- simplify code
+- ensure correctness
+- improve performance in practice
+- improve performance in the worst case
+- Ans: 3
+  - It is a crucial performance optimization because the points encountered while exploring the first subtree may enable pruning of the second subtree. For typical inputs, choosing the direction that goes toward the query point makes it more likely that we will encounter points close to the query point.
+
+## Interval Search Trees
+
+- What is the worst case running time of deleting an interval using an interval search tree?
+- constant
+- logarithmic
+- linearithmic
+- quadratic
+- Ans: 2
+  - Using a red-black BST, we can delete the interval in logarithmic time (using the left endpoint as the key).
+
+## Rectangle Intersection
+
+- What is the worst-case running time of the sweep-line algorithm to find all $R$ intersections among $n$ rectangles?
+- constant + $R$
+- $\log⁡n$ + $R$
+- $n\log⁡n$ + $R$
+- $n\log⁡N$ + $R\log⁡n$
+- Ans: 4
