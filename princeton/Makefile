@@ -426,3 +426,31 @@ SCHST1:
 LPHST1:
 	javac -cp $(CLASSPATH) c3/LinearProbingHashST.java
 	java -cp c3:$(CLASSPATH) LinearProbingHashST < c3/txt/tinyST.txt
+
+#########################
+#	     Chapter 3.5      #
+#########################
+
+SET1:
+	javac -cp $(CLASSPATH) c3/SET.java
+	java -cp c3:$(CLASSPATH) SET
+
+CSV1:
+	javac -cp $(CLASSPATH) c3/ST.java c3/LookupCSV.java
+	java -cp c3:$(CLASSPATH) LookupCSV c3/csv/amino.csv 0 3
+
+CSV2:
+	javac -cp $(CLASSPATH) c3/ST.java c3/LookupCSV.java
+	java -cp c3:$(CLASSPATH) LookupCSV c3/csv/ip.csv 0 1
+
+CSV3:
+	javac -cp $(CLASSPATH) c3/ST.java c3/LookupCSV.java
+	java -cp c3:$(CLASSPATH) LookupCSV c3/csv/DJIA.csv 0 1
+
+FI1:
+	javac -cp $(CLASSPATH) c3/SET.java c3/ST.java c3/FileIndex.java
+	java -cp c3:$(CLASSPATH) FileIndex c3/txt/ex1.txt c3/txt/ex2.txt c3/txt/ex3.txt c3/txt/ex4.txt
+
+SV1:
+	javac -cp $(CLASSPATH) c3/ST.java c3/SparseVector.java
+	java -cp c3:$(CLASSPATH) SparseVector

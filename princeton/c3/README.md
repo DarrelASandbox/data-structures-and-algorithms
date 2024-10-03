@@ -21,6 +21,11 @@
   - [Separate Chaining](#separate-chaining)
   - [Linear Probing](#linear-probing)
   - [Context](#context)
+- [Symbol Table Applications](#symbol-table-applications)
+  - [Sets](#sets)
+  - [Dictionary Clients](#dictionary-clients)
+  - [Indexing Clients](#indexing-clients)
+  - [Sparse Vectors](#sparse-vectors)
 
 # Symbol Tables
 
@@ -279,3 +284,45 @@ rotate E left      E         X
 - better performance in practice on typical inputs
 - implementation included in Java libraries
 - Ans: 3
+
+# Symbol Table Applications
+
+## Sets
+
+- Suppose that you implement a set using a red–black BST. Which of the following operations cannot be implemented in logarithmic time (or better) in the worst case?
+- add an element to the set (if it is not already in the set)
+- does the set contain a given element?
+- return the set of all elements contained in two given sets
+- remove an element from the set (if it is in the set)
+- Ans: 3
+  - Computing the intersection of two sets takes time proportional to the size of the smaller set (since we need to iterate over all elements in the smaller set and check whether they are contained in the large set). Note also that computing the intersection takes extra space proportional to the size of the intersection.
+
+## Dictionary Clients
+
+- Among the following symbol-table implementations, which would be most suitable for use in the LookupCSV client? Assume that the Key type implements the `compareTo()`, `equals()`, and `hashCode()` methods.
+- unordered array
+- ordered linked list
+- binary search tree
+- linear-probing hash table
+- Ans: 4
+  - Ordered operations (such as rank and ordered iteration) are not needed, so a hash table is probably most suitable.
+
+## Indexing Clients
+
+- Suppose that you are creating a book index which contains a set of keywords and there is a set of page numbers associated with each keyword (the pages on which the keyword appears). Which data type below would be the best choice to represent the book index?
+- `ST<Integer, SET<String>>`
+- `ST<String, SET<Integer>>`
+- `SET<ST<Integer, String>>`
+- `SET<ST<String, Integer>>`
+- Ans: 2
+  - Use a symbol table, where the key is the keyword (a `String`) and the value is the set of pages on which the keyword appears (a `SET<Integer>`). If the symbol table is implemented with a red–black BST, then the keywords and page numbers will appear in sorted order.
+
+## Sparse Vectors
+
+- Consider an $n$-by-$n$ matrix $A$ such that each row has 5 nonzero entries. Suppose that you represent $A$ using a sparse matrix (each row is represented as a sparse vector). What is the running time of multiplying the matrix $A$ with a dense vector $x$ of length $n$?
+- $n$
+- $n\log⁡n$
+- $n^2$
+- $n^3$
+- Ans: 1
+  - It takes constant time to compute the dot product of $x$ with a row of $A$. This must be done for each of the $n$ rows of $A$.
