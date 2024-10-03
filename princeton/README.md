@@ -22,3 +22,5 @@
    1. [mincong-h - algorithm-princeton](https://github.com/mincong-h/algorithm-princeton)
 5. [8puzzle](https://coursera.cs.princeton.edu/algs4/assignments/8puzzle/specification.php)
    1. [Chayemor - 8Puzzle - Coursera Algorithms Part 1](https://gist.github.com/Chayemor/3c37baaa77a489214d8b46ef8d968d96)
+6. [kd-trees](https://coursera.cs.princeton.edu/algs4/assignments/kdtree/specification.php)
+   1. [Chayemor - Kd-Trees - Coursera Algorithms Part 1](https://gist.github.com/Chayemor/632a6bd1110401dc5cf82d72497104e6)

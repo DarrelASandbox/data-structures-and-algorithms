@@ -1,12 +1,12 @@
 # Variables
 CLASSPATH = .:algs4.jar
 
-#########################
-#	      Chapter 1       #
-#########################
+##############################################
+#	               Assignments                 #
+##############################################
 
 #########################
-#	     Assignments      #
+#	      Chapter 1       #
 #########################
 
 helloWorld:
@@ -58,6 +58,36 @@ PM1:
 PM2:
 	javac -cp $(CLASSPATH) c1/Permutation.java c1/RandomizedQueue.java
 	java -cp c1:$(CLASSPATH) Permutation 8 < c1/txt/data-queues/duplicates.txt
+
+#########################
+#	      Chapter 3       #
+#########################
+
+KDV1:
+	javac -cp $(CLASSPATH) c3/KdTree.java c3/KdTreeVisualizer.java
+	java -cp c3:$(CLASSPATH) KdTreeVisualizer
+
+RS1:
+	javac -cp $(CLASSPATH) c3/KdTree.java c3/PointSET.java c3/RangeSearchVisualizer.java
+	java -cp c3:$(CLASSPATH) RangeSearchVisualizer c3/txt/input100K.txt
+
+RS2:
+	javac -cp $(CLASSPATH) c3/KdTree.java c3/PointSET.java c3/RangeSearchVisualizer.java
+	java -cp c3:$(CLASSPATH) RangeSearchVisualizer c3/txt/input1M.txt
+
+NNV1:
+	javac -cp $(CLASSPATH) c3/KdTree.java c3/PointSET.java c3/NearestNeighborVisualizer.java
+	java -cp c3:$(CLASSPATH) NearestNeighborVisualizer c3/txt/input100K.txt
+
+NNV2:
+	javac -cp $(CLASSPATH) c3/KdTree.java c3/PointSET.java c3/NearestNeighborVisualizer.java
+	java -cp c3:$(CLASSPATH) NearestNeighborVisualizer c3/txt/input1M.txt
+
+
+
+##############################################
+#	                 Lectures                  #
+##############################################
 
 #########################
 #	     Chapter 1.1      #
