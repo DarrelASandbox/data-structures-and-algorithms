@@ -231,6 +231,10 @@ IS4:
 	javac -cp $(CLASSPATH) c2/InsertionX.java
 	java -cp c2:$(CLASSPATH) Insertion < c2/txt/words3.txt
 
+#########################
+#	     Chapter 2.3      #
+#########################
+
 SHS1:
 	javac -cp $(CLASSPATH) c2/Shell.java
 	java -cp c2:$(CLASSPATH) Shell < c2/txt/tiny.txt
@@ -238,6 +242,10 @@ SHS1:
 SHS2:
 	javac -cp $(CLASSPATH) c2/Shell.java
 	java -cp c2:$(CLASSPATH) Shell < c2/txt/words3.txt
+
+#########################
+#	     Chapter 2.4      #
+#########################
 
 MS1:
 	javac -cp $(CLASSPATH) c2/Merge.java
@@ -279,6 +287,10 @@ INV1:
 	javac -cp $(CLASSPATH) c2/Inversions.java
 	java -cp c2:$(CLASSPATH) Inversions < c2/txt/input.txt
 
+#########################
+#	     Chapter 2.5      #
+#########################
+
 QS1:
 	javac -cp $(CLASSPATH) c2/Quick.java
 	java -cp c2:$(CLASSPATH) Quick < c2/txt/tiny.txt
@@ -311,6 +323,10 @@ QS8:
 	javac -cp $(CLASSPATH) c2/QuickBentleyMcIlroy.java
 	java -cp c2:$(CLASSPATH) QuickBentleyMcIlroy < c2/txt/words3.txt
 
+#########################
+#	     Chapter 2.6      #
+#########################
+
 PQ1:
 	javac -cp $(CLASSPATH) c2/MinPQ.java
 	java -cp c2:$(CLASSPATH) MinPQ < c2/txt/tinyPQ.txt
@@ -334,3 +350,23 @@ PQ5:
 PQ6:
 	javac -cp $(CLASSPATH) c2/Heap.java
 	java -cp c2:$(CLASSPATH) Heap < c2/txt/words3.txt
+
+#########################
+#	     Chapter 3.1      #
+#########################
+
+ST1:
+	javac -cp $(CLASSPATH) c3/ST.java
+	java -cp c3:$(CLASSPATH) ST < c3/txt/tinyST.txt
+
+SST1:
+	javac -cp $(CLASSPATH) c3/SequentialSearchST.java
+	java -cp c3:$(CLASSPATH) SequentialSearchST < c3/txt/tinyST.txt
+
+#########################
+#	     Chapter 3.2      #
+#########################
+
+BST1:
+	javac -cp $(CLASSPATH) c3/BinarySearchST.java
+	java -cp c3:$(CLASSPATH) BinarySearchST < c3/txt/tinyST.txt
