@@ -6,6 +6,10 @@
   - [BSTs](#bsts)
   - [Ordered Operations](#ordered-operations-1)
   - [Deletion](#deletion)
+- [Balanced Search Trees](#balanced-search-trees)
+  - [2-3 Search Trees](#2-3-search-trees)
+  - [Red-black BSTs](#red-black-bsts)
+  - [B-Trees](#b-trees)
 
 # Symbol Tables
 
@@ -90,3 +94,70 @@ A   H   P
   - Ans: 2
     - The main defect of Hibbard deletion is that it unbalances the tree, leading to $\sqrt{n}$​ height.
     - If instead of replacing the node to delete with its successor, you flip a coin and replace it with either its successor or predecessor, then, in practice, the height becomes logarithmic (but nobody has been able to prove this fact mathematically).
+
+# Balanced Search Trees
+
+## 2-3 Search Trees
+
+- Suppose that you are inserting a new key into a 2–3 tree. Under which one of the following scenarios must the height of the 2–3 tree increase by one?
+  - When the number of keys equals one less than a power of 2
+  - When the number of nodes equals one less than a power of 2
+  - When the final node on the search path from the root is a 3-node
+  - When every node on the search path from the root is a 3-node
+  - Ans: 4
+    - The height of a 2–3 tree increases only when the root node splits, and this happens only when every node on the search path from the root to the leaf where the new key should be inserted is a 3-node.
+
+## Red-black BSTs
+
+- Suppose that you left rotate the node containing E in the BST below. Which is the level-order traversal of the resulting red–black BST?
+  - R E X C M S Y A H P F
+  - R M X E H S Y C F P AR M X E H S Y C F P A
+  - R M X E P S Y C H A FR M X E P S Y C H A F
+  - R C X A E S Y M H P FR C X A E S Y M H P F
+  - Ans: 3
+
+```
+double lines = red
+                        R
+                      /   \
+                     /     \
+                    /       \
+rotate E left      E         X
+                  / \\      / \
+                 C   M     S   Y
+               //   / \
+               A   H   P
+                 //
+                 F
+
+
+                        R
+                      /   \
+                     M     X
+                   /   \  / \
+                  E     P S   Y
+                 / \
+                C   H
+               /
+              A
+             /
+            F
+```
+
+- Suppose that you insert nn keys in ascending order into a red–black BST. What is the height of the resulting tree?
+  - constant
+  - logarithmic
+  - linear
+  - linearithmic
+  - Ans: 2
+    - The height of any red–black BST on nn keys (regardless of the order of insertion) is guaranteed to be between $\log_{⁡2}n$ and $2log⁡_{2}n$.
+
+## B-Trees
+
+- How many probes does a search in a B-tree of order mm with nn keys require in the worst case?
+- constant
+- $\log⁡m$
+- $\log⁡_{m/2}n$
+- $\log⁡_{2}n$
+- Ans: 3
+  - This is the worst-case height, when every node has $m/2$ children.

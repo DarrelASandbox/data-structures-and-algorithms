@@ -370,3 +370,17 @@ SST1:
 BST1:
 	javac -cp $(CLASSPATH) c3/BinarySearchST.java
 	java -cp c3:$(CLASSPATH) BinarySearchST < c3/txt/tinyST.txt
+
+# (unbalanced) Binary Search Tree (BST)
+
+UBST1:
+	javac -cp $(CLASSPATH) c3/BST.java
+	java -cp c3:$(CLASSPATH) BST < c3/txt/tinyST.txt
+
+#########################
+#	     Chapter 3.3      #
+#########################
+
+RBST1:
+	javac -cp $(CLASSPATH) c3/RedBlackBST.java
+	java -cp c3:$(CLASSPATH) RedBlackBST < c3/txt/tinyST.txt
